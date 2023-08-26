@@ -1,0 +1,7 @@
+Tuần 1 
+Đỗ Đăng Hoàn - Hoàn thành thiết kế giao diện demo cho web bằng Canva (100 %)
+3 thành viên còn lại đang nghiên cứu nhiệm vụ của mình (100 %)
+
+Dự kiến tuần 2
+Đỗ Đăng Hoàn - dự kiến xây dựng khung html và css dựa trên bản thiết kế
+3 thành viên còn lại đang nghiên cứu nhiệm vụ của mình 
