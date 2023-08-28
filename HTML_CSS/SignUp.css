@@ -3,7 +3,7 @@ body{
     padding: 0px;
     box-sizing: border-box;
     background-color: black;
-    background-image: url("../Picture/backGoundLoginOne.png");
+    background-image: url("../Picture/backGoundLSignUpOne.png");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
@@ -16,33 +16,35 @@ body{
     margin-bottom: -16px;
     width: 100px;
 }
-
+.mainDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 570px;
+    background-color: rgb(21, 21, 21);
+    border-radius: 20px;
+    opacity: 85%;
+}
 .buttonLogin{
+    margin-left: 100px;
     padding: 15px 5px;
     width: 70px;
     background-color: black;
     border-radius: 30px;
     border: 2px solid white;
 }
-
-.mainDiv{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 450px;
-    height: 420px;
-    background-color: rgb(21, 21, 21);
-    border-radius: 20px;
-    opacity: 85%;
+h1{
+    text-align: center;
 }
 
-.inputLogin{
+.inputTextBox{
     width: 95%;
+    color: white;
+    background-color: black;
+    border: 3px white solid;
     height: 35px;
     border-radius: 10px;
-    background-color: black;
-    color: white;
-    border: 3px solid white;
     padding-left: 20px;
 }

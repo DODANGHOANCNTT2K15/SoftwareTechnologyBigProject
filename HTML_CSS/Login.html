@@ -10,22 +10,38 @@
     <link rel="stylesheet" type="text/css" href="Login.css">
 </head>
 <body>
-    <div class="mainDiv">
+    <div>
         <a href="Home.html"><img src="..\Picture\logo.png" class="logo" align="left"></a>
     </div>
-    <div class="divLogin">
-        <h1>ĐĂNG NHẬP</h1>
-        <input type="text" name="username" placeholder="TÊN ĐĂNG NHẬP" class="inputLoginText">
-        <input type="text" name="username" placeholder="MẬT KHẨU" class="inputLoginText"><br>
-        <div style="opacity: 50%; margin-left: 45px; margin-top: 20px;">
-            <input type="checkbox" name="saveLogin" value="saveLogin" width="20px" height="20px">
-            <font id="saveLoginText">Lưu đăng nhập</font>
-        </div>
-        <button name="buttonLogin2" class="buttonLogin"><img src="../Picture/IconMuiTen.png" style="width: 60%;"></button>
-        <div style="width: 100%; margin-top: 50px;" >
-            <a href="" class="textTaoTaiKhoan"><font>Bạn không thể đăng nhập ?</font></a><br>
-            <a href="" class="textTaoTaiKhoan" style="margin-left: 170px;"><font>TẠO TÀI KHOẢN</font></a>
-        </div>
+    <div class="mainDiv">
+        <table style="width: 440px; height: auto; padding: 20px;" cellspacing="10px">
+            <tr>
+                <td><h1 style="text-align: center;">ĐĂNG NHẬP</h1></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="userName" class="inputLogin" placeholder="TÊN ĐĂNG NHẬP"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="passWork" class="inputLogin" placeholder="MẬT KHẨU"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="savePoint" id="savePoint">
+                    <label for="savePoint">Lưu đăng nhập</label>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <button name="buttonLogin" class="buttonLogin"><img src="../Picture/IconMuiTen.png" style="width: 60%;"></button>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><font>Bạn chưa có tài khoản ?</font></td>
+            </tr>
+            <tr>
+                <td align="center"><a href="SignUp.html" style="text-decoration: none; color: white;">TẠO TÀI KHOẢN</a></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
