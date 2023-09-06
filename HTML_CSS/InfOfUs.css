@@ -115,7 +115,10 @@ li.liForTextHeader{
 }
 
 .contentContracts{
-    height: 1000px;
+    height: 45vh;
+    width: 100%;
+    background: linear-gradient(to left, black, rgb(79, 79, 79));
+    opacity: 80%;  
 }
 .contracs div{
     width: 100%;
@@ -134,4 +137,11 @@ li.liForTextHeader{
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 3px 3px rgb(255, 255, 255, 80%);
+}
+.contentContracts table{
+    padding-top: 50px;
+}
+
+.contentContracts table tr td font{
+    color: white;
 }
