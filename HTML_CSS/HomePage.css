@@ -1,0 +1,374 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+a.linkHeader{
+    text-decoration: none;
+}
+
+ul.ulTextHeader{
+    padding: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+ul.ulTextHeader :hover{
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    background-color: aliceblue;
+    margin-top: 10px;
+}
+li.liForTextHeader{
+    margin: 25px 20px;
+}
+
+.forTextHeader{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 600;
+
+}
+
+.forTextButton{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headerSquare{
+    display: flex;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    justify-content: flex-end;
+    background-color: black;
+    width: 100%;
+    height: 70px;
+    border-bottom: 4px solid rgb(66, 66, 66);
+}
+.headerSquare ul li{
+    list-style: none;
+}
+
+.logo{
+    margin-left: 10px;
+    margin-top: -16px;
+    margin-bottom: -16px;
+    width: 100px;
+}
+
+.buttonLogin{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: bold;
+}
+
+#login{
+    text-decoration: none;
+    color: black;
+}
+#login :visited{
+    color: black;
+}
+#login :focus{
+    outline: none;
+}
+
+/* Phần mở đầu */
+
+.mainDiv{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 3000px;
+    
+}
+
+.mainDiv .FirstSee{
+    width: 100%;
+    height: fit-content;
+    margin-top: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.mainDiv .FirstSee h1{
+    position: absolute;
+    width: 100%;
+    opacity: 90%;
+    text-transform: uppercase;
+    font-family: 'Knewave', cursive;
+    font-style: italic;
+    top: 7vw;
+    font-size: 9vw;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 3px rgba(225,225, 225, 0.5);
+    line-height: 10vw;
+    display: flex;
+    justify-content: center;
+}
+.mainDiv .FirstSee .inputSearch{
+    width: 100%;
+    position: absolute;
+    top: 38vw;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    
+}
+
+.mainDiv .FirstSee .inputSearch input{
+    display: flex;
+    width: 40vw;
+    height: 30px;
+    margin: 0px auto;
+    padding-left: 20px;
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    border-radius: 20px; 
+}
+.mainDiv .FirstSee .inputSearch img{
+    transform: translateX(-30vw) ;
+}
+
+.mainDiv .FirstSee .scrollDown{
+    /* background-color: red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 45vw;
+    opacity: 0.8;
+}
+
+.mainDiv .FirstSee .scrollDown font{
+    text-transform: uppercase;
+    font-size: 13px;
+    padding-left: 50%;
+    transform: translateX(-65px);
+}
+
+.mainDiv .HomePage{
+    background-color: rgb(220, 0, 0);
+    width: 100%;
+    height: 500px;
+    z-index: 200;
+    margin-top: 100px;
+}
+
+.mainDiv .HomePage .banner{
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.banner img{
+    height: 100%;
+}
+
+.HomePage .HomePage_Content{
+    width: 96%;
+    height: fit-content; 
+    
+    /* background-color: blue; */
+    
+    margin: 0px auto;
+    margin-top: 30px;   
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.HomePage .HomePage_Content .HomePage_Content_Category{
+    background-color: red;
+    width: 58%;
+    height: 220px;
+    float: left;
+    box-sizing: border-box;
+
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.HomePage .HomePage_Content h3{
+    margin: 0;
+}
+
+.HomePage .HomePage_Content h2{
+    margin: 0;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_Category .HomePage_Content_Category_Product{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.HomePage .HomePage_Content .HomePage_Content_Category .HomePage_Content_Category_Product .productCategory{
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_Category .HomePage_Content_Category_Product .productCategory:hover{
+   background-color: white; 
+   border-radius: 10px;
+   color: black;
+   font-size: 17px;
+}   
+
+.HomePage .HomePage_Content .HomePage_Content_HotProduct{
+    background-color: rgb(0, 249, 79);
+    width: 40%;
+    height: 220px;
+    float: right;
+    box-sizing: border-box;
+
+    padding: 20px;
+    padding-left: 40px;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_HotProduct .HotProduct_New{
+    margin-top: 10px;
+    height: 84%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_HotProduct .HotProduct_New img{
+    height: 100%;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_HotProduct .HotProduct_New .HotProduct_New_Inf{
+    width: 100%;
+    padding-left:40px;
+    padding-top: 24px;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_HotProduct .HotProduct_New .HotProduct_New_Inf table tr td font{
+    font-weight: lighter;
+    opacity: 0.7;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts{
+    background-color: yellow;
+    width: 100%;
+    height: fit-content;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    margin-top: 30px;
+
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .Row{
+    width: 96%;
+    height: 280px;
+    /* background-color: blueviolet; */
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .Row .Content_Product_Column{
+    width: 230px;
+    height: 100%;
+    /* background-color: green; */
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .Row .Content_Product_Column:hover{
+    width: 280px;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .Row .Content_Product_Column .Img_InContent{
+    width: 90%;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .Row .Content_Product_Column .Title_Content{
+    padding: 15px;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .Row .Content_Product_Column .Title_Content table{
+    background-color: rgba(165, 42, 42, 0);
+    width: 100%;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .HomePage_Content_Button_WatchMore{
+    /* background-color: red; */
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.333);
+}
+
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .HomePage_Content_Button_WatchMore button{
+    height: 40px;
+    width: 150px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.403);
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.HomePage .HomePage_Content .HomePage_Content_AllProducts .HomePage_Content_Button_WatchMore button:hover{
+    background: radial-gradient(circle at center, #ff6b6b, #2c3e50); 
+}
+
+.HomePage .HomePage_Content .HomePage_Div_Design{
+    background-color: rgba(246, 246, 246, 0.208);
+    border-radius: 20px;
+}
+
+
+/* footer  */
+
+footer .imfFooter{
+    background-color: rgba(255, 255, 255, 0.116);
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    box-sizing: border-box;
+}
+
+footer .imfFooter .footer_Contract{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer .imfFooter .footer_Contract_Address{
+    text-align: center;
+    padding-top: 30px;
+    opacity: 0.5;
+}
+
+footer .imfFooter .footer_Contract .footer_Contract_Icon img{
+    padding: 0px 5px;
+}
+
