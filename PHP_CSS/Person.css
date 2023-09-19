@@ -1,0 +1,205 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a.linkHeader{
+    text-decoration: none;
+}
+
+ul.ulTextHeader{
+    padding: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+ul.ulTextHeader :hover{
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    background-color: aliceblue;
+    margin-top: 10px;
+}
+li.liForTextHeader{
+    margin: 25px 20px;
+}
+
+.forTextHeader{
+    color: white;
+    font-weight: 600;
+
+}
+.forTextButton{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headerSquare{
+    display: flex;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    justify-content: flex-end;
+    background-color: black;
+    width: 100%;
+    height: 70px;
+    border-bottom: 4px solid rgb(66, 66, 66);
+}
+
+.logo{
+    margin-left: 10px;
+    margin-top: -16px;
+    margin-bottom: -16px;
+    width: 100px;
+}
+
+.buttonLogin{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: bold;
+}
+
+#login{
+    text-decoration: none;
+    color: black;
+}
+#login :visited{
+    color: black;
+}
+#login :focus{
+    outline: none;
+}
+
+.mainDiv{
+    width: 96%;
+    height: 1000px;
+    margin: 0px auto;
+    margin-top: 100px;
+    color: white;
+}
+
+.mainDiv .divLeft{
+    /* background-color: aqua; */
+    width: 28%;
+    height: 500px;
+    float: left;
+    padding-top: 30px;
+
+}
+
+.mainDiv .divLeft .IconPerson{
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: 3px solid white;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.mainDiv .divLeft .IconPerson table{
+    width: 60%;
+}
+
+.mainDiv .divLeft .IconPerson table tr td{
+    padding-left: 5%;
+}
+
+.mainDiv .divLeft .listPerson{
+    padding: 20px;
+}
+.mainDiv .divLeft .listPerson .tdPaddingChange{
+    padding-left: 20%;
+}
+
+.mainDiv .divRight{
+    background-color: rgba(255, 255, 255, 0.39);
+    width: 70%;
+    height: 500px;
+    float: right;
+    border-radius: 20px;
+}
+
+.mainDiv .divRight .headerContent{
+    margin: 0px auto;
+    width: 96%;
+    height: 70px;
+    /* background-color: blue; */
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.428);
+    padding: 10px;
+    padding-left: 0px;
+}
+
+.mainDiv .divRight .contentInfLeft{
+    width: 70%;
+    /* background-color: red; */
+    height: 85%;
+    float: left;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, 0.393);
+}
+
+.mainDiv .divRight .contentInfLeft table{
+    margin: 0px 5% 0 5%;
+}
+.mainDiv .divRight .contentInfLeft table .changeAlignRight{
+    text-align: right;
+    font-weight: lighter;
+    opacity: 0.8;
+}
+.mainDiv .divRight .contentInfLeft table button{
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.129);
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+.mainDiv .divRight .contentInfLeft table .selectOption{
+    width: 100%;
+    height: 27px;
+    background-color: rgba(0, 0, 0, 0.232);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.mainDiv .divRight .contentInfRight{
+    width: 30%;
+    /* background-color: aquamarine; */
+    height: 85%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.mainDiv .divRight .contentInfRight table{
+    margin: 25px auto;
+    width: 80%;
+    /* background-color: aqua; */
+}
+
+.mainDiv .divRight .contentInfRight table tr td{
+    width: 100%;
+    text-align: center;
+    /* background-color: blueviolet; */
+}
+
+.mainDiv .divRight .contentInfRight table button{
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.232);
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
