@@ -192,16 +192,105 @@ header{
         width: 100%;
         height: 50px;
         background-color: rgb(37, 37, 37);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-
+        .header_3 p{
+            margin: 0px;
+            padding: 0px;
+            opacity: 0.5;
+            font-size: 15px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+    
 main{
     background-color: rgb(20, 20, 20);
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    flex-wrap: wrap;
 }
-    
-
+    .main_content{
+        width: 100%;
+    }
+        .main_content_1{
+            display: flex;
+            justify-content: center;
+        }
+        .main_content_2{
+            display: flex;
+            background-color: rgb(71, 71, 71);
+            border: none;
+        }
+            .main_content_2_img{
+                width: 60%;
+            }
+                .main_content_2_img img{
+                    width: 100%;
+                }
+            .main_content_2_title{
+                width: 40%;
+                padding: 40px;
+                box-sizing: border-box;
+            }
+                .main_content_2_title a:first-child{
+                    font-size:50px;
+                    font-weight: bold;
+                }
+                .main_content_2_title a:first-child:hover{
+                    color: orangered;
+                }
+                .main_content_2_title a{
+                    text-decoration: none;
+                    color: white;
+                }
+                .main_content_2_title a:last-child{
+                    color: orangered;
+                    font-size: 35px;
+                }
+                .main_content_2_title p{
+                    font-size: 30px;
+                    text-align: justify;
+                    margin-right: 30px;
+                    font-weight: 100;
+                    opacity: 0.5;
+                }
+        .main_content_3{
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+        }
+            .main_content_cover{
+                width: 80%;
+                /* background-color: red; */
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 100px;
+            }
+                .main_content_new{
+                    width: 48%;
+                    /* background-color: aquamarine; */
+                    margin-bottom: 50px;
+                }
+                    .main_content_new img{
+                        width: 100%;
+                    }
+                    .main_content_new a{
+                        color: white;
+                        text-decoration: none;
+                    }
+                    .main_content_new a:hover{
+                        color: orangered;
+                    }
+                    .main_content_new p{
+                        opacity: 0.5;
+                        line-height: 30px;
+                        font-size: 20px;
+                    }
 .contract_static{
     position: fixed;
     width: 40px;
