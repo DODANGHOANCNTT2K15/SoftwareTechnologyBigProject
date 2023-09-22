@@ -232,6 +232,22 @@ main{
                 .content_left_img_main img{
                     width: 100%;
                 }
+                .content_left_img_main_second{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin-top: 20px;
+                    overflow: hidden;
+                    /* background-color: aqua; */
+                    flex-wrap: wrap;
+                }
+                    .content_left_img_cover{
+                        width: 24%;
+                        margin-bottom: 10px;
+                    }
+                    .content_left_img_cover img{
+                        width: 100%;
+                    }
             .content_right{
                 width: 50%;
                 box-sizing: border-box;
@@ -346,7 +362,60 @@ main{
                             text-decoration: none;
                             font-size: 40px;
                         }
-    
+        .content_2{
+            /* background-color: antiquewhite; */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 50px 0px;
+        }
+            .content_2 h1{
+                width: 100%;
+                text-align: center;
+                font-size: 40px;
+            }
+            .product_recomment{
+                /* background-color: aqua; */
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                border-bottom: 2px dashed white;
+            }
+                .product_recomment_item{
+                    width: 24%;
+                    padding-bottom: 50px;
+                }
+                .product_recomment_item p{
+                    text-align: center;
+                    font-size: 20px;
+                }
+                .product_recomment_item p:last-child{
+                    font-size: 30px;
+                    color: orangered;
+                }
+                    .product_recomment_item_cover{
+                        width: 100%;
+                        height: 70%;
+                        overflow: hidden;
+                    }
+                    .product_recomment_item_cover img{
+                        width: 100%;
+                        transition: 0.5s linear;
+                    }
+                        .product_recomment_item_cover img:hover{
+                            transform: scale(1.3);
+                        }
+                    .product_recomment_item a{
+                        text-decoration: none;
+                        color: white;
+                    }
+                    .product_recomment_item a:hover{
+                        color: orangered;
+                    }
+                        .product_recomment_item_title h1{
+                            font-size: 25px;
+                        }
 .contract_static{
     position: fixed;
     width: 40px;
