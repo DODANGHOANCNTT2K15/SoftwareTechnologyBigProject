@@ -100,7 +100,7 @@ header{
                 top: 150px;
                 left: 0px;
                 transform: scaleY(0);
-                /* transition: 0.5s; */
+                transition: 0.5s;
                 transform-origin: top;
                 z-index: 100;
             }
@@ -434,3 +434,4 @@ footer{
         .footer_2 p{
             font-size: 30px;
         }
+
