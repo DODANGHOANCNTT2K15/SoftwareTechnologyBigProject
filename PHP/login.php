@@ -10,6 +10,57 @@
     <link rel="stylesheet" href="../CSS/login.css" type="text/css">
 </head>
 <body>
+<?php
+    //Yêu cầu kết nối với database
+    require_once 'ConnectData.php';
+    $emailLoginErr = $passwordLoginErr = "";
+    $emailLogin = $passwordLogin = "";
+    
+    //Kiểm tra các trường dữ liệu
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["emailLogin"])) {
+            $emailLoginErr = "* Email còn thiếu";
+        } else {
+            $emailLogin = test_input($_POST["emailLogin"]);
+        }
+
+        if (empty($_POST["passwordLogin"])) {
+            $passwordLoginErr = "* Mật khẩu còn thiếu";
+        } else {
+            $passwordLogin = test_input($_POST["passwordLogin"]);
+        }
+
+        // Kiểm tra emailLogin và mật khẩu trong cơ sở dữ liệu
+        $query = "SELECT * FROM user WHERE email = ? AND password = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $emailLogin, $passwordLogin);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        // Kiểm tra xem có lỗi không
+        if (empty($emailLoginErr) && empty($passwordLoginErr)) {
+            if ($result->num_rows !== 0 ) {
+                // Đăng nhập thành công, thực hiện các hành động sau đây
+                $_SESSION["emailLogin"] = $emailLogin; // Lưu emailLogin vào phiên làm việc
+
+                // Chuyển hướng đến trang sau khi đăng nhập thành công
+                header("Location: index.php");
+                exit();
+            } else {
+                // Sai emailLogin hoặc mật khẩu, hiển thị thông báo lỗi
+                $passwordLoginErr = "* Email hoặc mật khẩu không đúng";
+            }
+        }
+    }
+    // Hàm này dùng để kiểm tra và xử lý dữ liệu đầu vào
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>
+
     <header>
         <div class="header_1">
             <ul>
@@ -139,18 +190,24 @@
     </header>
     <main>
         <div class="content">
-            <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
+            <h1>ĐĂNG NHẬP</h1>
             <div class="login">
                 <div class="login_cover">
-                    <label for="userName">Tên tài khoản</label>
-                    <input type="text" id="userName" value placeholder="Username">
-                    <label for="userName">Mật khẩu</label>
-                    <input type="text" id="userName" value placeholder="Passwork">
-                    <button type="button" id="login_button">ĐĂNG NHẬP</button>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <label for="emailLogin">Email đăng nhập: </label>
+                    <input type="text" id="emailLogin" placeholder="Email" name="emailLogin">
+                    <br><?php echo $emailLoginErr?>
+
+                    <label for="userName">Mật khẩu: </label>
+                    <input type="text" id="passwordLogin" placeholder="Mật khẩu" name="passwordLogin">
+                    <br><?php echo $passwordLoginErr?>
+
+                    <button type="submit" id="login_button">ĐĂNG NHẬP</button>
                     <p>Bạn chưa là thành viên</p>
                     <div class="register">
                         <a href="register.php">ĐĂNG KÝ</a>
                     </div> 
+                    </form>
                 </div>
             </div>
         </div>

@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="../HTML/about_me.php">
+                    <li><a href="../PHP/about_me.php">
                         <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
                     </a></li>
                 </ul>
@@ -223,7 +223,7 @@
                 <div class="main_product_content">
                     <div class="product_content_item">
                         <div class="product_content_item_img">
-                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                         </div>
                         <div class="product_content_item_inf">
                             <p>New Arrival</p>
@@ -234,7 +234,7 @@
                     </div>
                     <div class="product_content_item">
                         <div class="product_content_item_img">
-                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                         </div>
                         <div class="product_content_item_inf">
                             <p>New Arrival</p>
@@ -245,7 +245,7 @@
                     </div>
                     <div class="product_content_item">
                         <div class="product_content_item_img">
-                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                         </div>
                         <div class="product_content_item_inf">
                             <p>New Arrival</p>
@@ -256,7 +256,7 @@
                     </div>
                     <div class="product_content_item">
                         <div class="product_content_item_img">
-                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                         </div>
                         <div class="product_content_item_inf">
                             <p>New Arrival</p>
@@ -267,7 +267,7 @@
                     </div>
                     <div class="product_content_item">
                         <div class="product_content_item_img">
-                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                         </div>
                         <div class="product_content_item_inf">
                             <p>New Arrival</p>
@@ -278,7 +278,7 @@
                     </div>
                     <div class="product_content_item">
                         <div class="product_content_item_img">
-                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                         </div>
                         <div class="product_content_item_inf">
                             <p>New Arrival</p>

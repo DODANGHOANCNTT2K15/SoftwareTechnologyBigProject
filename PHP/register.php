@@ -26,7 +26,6 @@
         }
 
         //Kiểm tra email đăng ký đã tồn tại chưa
-        // Kiểm tra xem email đã tồn tại trong cơ sở dữ liệu hay chưa
         $checkEmailQuery = "SELECT * FROM user WHERE email = ?";
         $checkEmailStmt = $conn->prepare($checkEmailQuery);
         $checkEmailStmt->bind_param("s", $email);

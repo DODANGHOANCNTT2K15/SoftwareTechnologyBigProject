@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="../HTML_PHADILAMLAI/about_me.php">
+                    <li><a href="../PHP/about_me.php">
                         <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
                     </a></li>
                 </ul>
