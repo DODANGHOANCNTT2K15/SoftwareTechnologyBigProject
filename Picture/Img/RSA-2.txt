@@ -1,0 +1,13 @@
+Để kiểm tra tính toàn vẹn của dữ liệu đã được mã hóa RSA và xác thực nguồn gốc, bạn có thể sử dụng chữ ký số. Dưới đây là quy trình ngắn gọn:
+
+1. Người gửi tạo cặp khóa RSA: Người gửi tạo một cặp khóa RSA, bao gồm khóa công khai và khóa riêng tư.
+
+2. Người gửi ký số dữ liệu: Người gửi sử dụng khóa riêng tư để tạo chữ ký số cho dữ liệu bằng cách ký một bản rút gọn của dữ liệu.
+
+3. Gửi dữ liệu và chữ ký số: Người gửi gửi dữ liệu đã mã hóa và chữ ký số đến người nhận.
+
+4. Người nhận giải mã và kiểm tra chữ ký số: Người nhận sử dụng khóa công khai của người gửi để giải mã chữ ký số và lấy bản rút gọn của dữ liệu gốc. Họ so sánh bản rút gọn này với bản rút gọn của dữ liệu đã giải mã. Nếu chúng khớp, tính toàn vẹn của dữ liệu được xác minh.
+
+5. Kiểm tra xác thực: Người nhận cũng có thể kiểm tra xác thực bằng cách xác minh chữ ký số bằng khóa công khai của người gửi. Nếu chữ ký số hợp lệ, điều này chứng tỏ dữ liệu đã được gửi bởi người gửi thật sự.
+
+Quy trình này đảm bảo tính toàn vẹn và xác thực của dữ liệu trong quá trình truyền tải.

@@ -213,109 +213,69 @@ main{
     padding-top: 50px;
     flex-wrap: wrap;
 }
-
-    .content{
+    .content {
         width: 90%;
-        /* background-color: antiquewhite; */
-    }
-        .banner{
-            width: 100%;
-            margin-bottom: 50px;
-        }
-        .banner img{
-            width: 100%;
-        }
-        .product{
-            width: 100%;
-            /* background-color: aquamarine; */
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-            .product_item{
-                width: 33%;
-            }
-                .product_item_cover{
-                    width: 100%;
-                    overflow: hidden;
-                }
-                .product_item_cover img{
-                    width: 100%;
-                }
-                .product_item_title{
-                    display: flex;
-                    flex-direction: column;
-                    text-align: center;
-                }
-                .product_item_title a{
-                    font-size: 30px;
-                }
-                .product_item_title p:first-child{
-                    border-bottom: 2px dashed rgba(255, 255, 255, 0.351);
-                    padding-bottom: 20px;
-                }
-                .product_item_title p:first-child, p:last-child{
-                    color: orangered;
-                }
-                .product_item_title p:last-child{
-                    font-size:35px;
-                }
-                .product_item_title a{
-                    text-decoration: none;
-                    color: white;
-                }
-                .product_item_title a:hover{
-                    color: orangered;
-                }
-                .product_item_title span{
-                    text-decoration: line-through;
-                    color: rgb(89, 89, 89);
-                    font-size: 20px;
-                    margin-left: 20px;
-                }
-    
-.contract_static{
-    position: fixed;
-    width: 40px;
-    height: 120px;
-    background-color: rgb(32, 32, 32);
-    top: 50%;
-    right: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-    .contract_static a{
+        /* background-color: red; */
         display: flex;
         justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
     }
-    .contract_static img{
-        width: 80%;
-        z-index: 100;
-    }
-.cart_static{
-    position: fixed;
-    top: 35%;
-    right: 0px;
-    background-color: orangered;
-    width: 40px;
-    height: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-around;
-}
-    .cart_static p{
-        margin: 0px;
-        font-size: 20px;
-        margin-top: 5px;
-    }
-    .cart_static img{
-        width: 100%;
-    }
+        .content h1{
+            width: 100%;
+            text-align: center;
+        }
+        form{
+            /* background-color: aqua; */
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+        }
+            .form_group input{
+                width: 100%;
+                height: 40px;
+                margin: 15px 0px;
+                border: 2px solid white;
+                padding-left: 20px;
+                box-sizing: border-box;
+                font-size: 17px;
+                background-color: rgb(57, 57, 57);
+                color: white;
+            }
+            .form_group label{
+                font-size: 20px;
+            }
+            .checkbox_form {
+                display: flex;
+            }
+            .checkbox_form input {
+                width: 30px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+            .checkbox_form label{
+                width: 95%;
+                margin-left: 20px;
+            }
+            .checkbox_form{
+                margin-bottom: 10px;
+            }
+            .register{
+                width: 100%;
+            }
+                .register button{
+                    width: 100%;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 30px;
+                    padding: 10px 0px;
+                    margin-bottom: 10px;
+                }
+            .login a{
+                color: white;
+                font-size: 20px;
+            }
 
-
+    
 footer{
     /* background-color: aquamarine; */
     height: fit-content;
@@ -434,4 +394,3 @@ footer{
         .footer_2 p{
             font-size: 30px;
         }
-
