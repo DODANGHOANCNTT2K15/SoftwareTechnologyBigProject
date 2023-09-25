@@ -16,18 +16,18 @@
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.html"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
             <div class="header_logo">
-                <a href="index.html"><img src="../Picture/Icon/Icon_logo.png"></a>
+                <a href="index.php"><img src="../Picture/Icon/Icon_logo.png"></a>
             </div>
             <div class="header_category">
                 <ul>
                     <li>
-                        <a href="product.html">SẢN PHẨM</a>
+                        <a href="product.php">SẢN PHẨM</a>
                         <div class="header_hover_product_category">
                             <div class="category_product_hover">
                                 <a href="">
@@ -46,7 +46,7 @@
                                 </a>
                             </div>
                             <div class="category_product_hover">
-                                <a href="SaleOff.html">
+                                <a href="SaleOff.php">
                                     <div class="img_category_product">
                                         <img src="../Picture/Img/Img_banner_safeOf.jpg">
                                     </div>
@@ -149,7 +149,7 @@
                     <button type="button" id="login_button">ĐĂNG NHẬP</button>
                     <p>Bạn chưa là thành viên</p>
                     <div class="register">
-                        <a href="register.html">ĐĂNG KÝ</a>
+                        <a href="register.php">ĐĂNG KÝ</a>
                     </div> 
                 </div>
             </div>

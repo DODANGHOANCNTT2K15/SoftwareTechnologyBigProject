@@ -7,27 +7,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/inside_product.css" type="text/css">
 </head>
 <body>
+    <div class="contract_static">
+        <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
+        <a href=""><img src="../Picture/Icon/Icon_youtube.png" alt=""></a>
+        <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
+    </div>
+    <div class="cart_static">
+        <p>0</p>
+        <a href="">
+            <img src="../Picture/Icon/Icon_cart_static.png">
+        </a>
+    </div>
     <header>
         <div class="header_1">
             <ul>
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.html"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
             <div class="header_logo">
-                <a href="index.html"><img src="../Picture/Icon/Icon_logo.png"></a>
+                <a href="index.php"><img src="../Picture/Icon/Icon_logo.png"></a>
             </div>
             <div class="header_category">
                 <ul>
                     <li>
-                        <a href="product.html">SẢN PHẨM</a>
+                        <a href="product.php">SẢN PHẨM</a>
                         <div class="header_hover_product_category">
                             <div class="category_product_hover">
                                 <a href="">
@@ -46,7 +57,7 @@
                                 </a>
                             </div>
                             <div class="category_product_hover">
-                                <a href="SaleOff.html">
+                                <a href="SaleOff.php">
                                     <div class="img_category_product">
                                         <img src="../Picture/Img/Img_banner_safeOf.jpg">
                                     </div>
@@ -138,19 +149,190 @@
         </div>
     </header>
     <main>
-        <div class="content">
-            <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
-            <div class="login">
-                <div class="login_cover">
-                    <label for="userName">Tên tài khoản</label>
-                    <input type="text" id="userName" value placeholder="Username">
-                    <label for="userName">Mật khẩu</label>
-                    <input type="text" id="userName" value placeholder="Passwork">
-                    <button type="button" id="login_button">ĐĂNG NHẬP</button>
-                    <p>Bạn chưa là thành viên</p>
-                    <div class="register">
-                        <a href="register.html">ĐĂNG KÝ</a>
-                    </div> 
+        <div class="content content_1">
+            <div class="content_left">
+                <div class="content_left_img_main">
+                    <img src="../Picture/Img_shoes/Img_shoes_2.jpeg">
+                </div>
+                <div class="content_left_img_main_second">
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_01.jpeg" alt=""></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_02.jpeg" alt=""></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_03.jpeg" alt=""></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_04.jpeg" alt=""></div>
+                </div>
+                <!-- <div class="content_left_comment_user">
+                    
+                </div> -->
+            </div>
+            <div class="content_right">
+                <div class="content_right_select content_inf_main">
+                    <h1>PATTAS TOMO - LOW TOP - BLARNEY</h1>
+                    <p>Mã sản phẩm : <span>SA00181</span></p>
+                    <p>Tình trạng : <span>New Arrival</span></p>
+                    <p>720.000 VND</p>
+                </div>
+                <div class="content_right_select content_color">
+                    <div class="color color_1">
+                        <button></button>
+                    </div>
+                    <div class="color color_2">
+                        <button></button>
+                    </div>
+                    <div class="color color_3">
+                        <button></button>
+                    </div>
+                </div>
+                <div class="content_right_select">
+                    <div class="select_sizeAndDiamondsuit">
+                        <div class="size">
+                            <h1>SIZE</h1>
+                            <select>
+                                <option value="36" selected>36</option>
+                                <option value="">37</option>
+                                <option value="">38</option>
+                                <option value="">39</option>
+                                <option value="">40</option>
+                                <option value="">41</option>
+                                <option value="">42</option>
+                            </select>
+                        </div>
+                        <div class="amount">
+                            <h1>SỐ LƯỢNG</h1>
+                            <select>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="addCartAndHeart">
+                        <button>THÊM VÀO GIỎ HÀNG</button>
+                        <button>
+                            <img src="../Picture/Icon/Icon_heart_2.png">
+                        </button>
+                    </div>
+                    <div class="pay">
+                        <a href="">THANH TOÁN</a>
+                    </div>
+                </div>
+                <div class="content_right_select">
+                    <h1>THÔNG TIN SẢN PHẨM</h1>
+                    <div class="content_imf">
+                        <ul>
+                            <li>Sex; Unisex</li>
+                            <li>Chất liệu: Canvas</li>
+                            <li>Thể loại: Low Top</li>
+                        </ul>
+                    </div>
+                    <img src="../Picture/Img/Img_size_shoes.jpg">
+                </div>
+                <div class="content_right_select">
+                    <h1>QUY ĐỔI SẢN PHẨM</h1>
+                    <ul>
+                        <li>Chỉ đổi hàng 1 lần duy nhất, mong bạn cân nhắc kĩ trước khi quyết định.</li>
+                        <li>Thời hạn đổi sản phẩm khi mua trực tiếp tại cửa hàng là 07 ngày, kể từ ngày mua. Đổi sản phẩm khi mua online là 14 ngày, kể từ ngày nhận hàng.</li>
+                        <li>Sản phẩm đổi phải kèm hóa đơn. Bắt buộc phải còn nguyên tem, hộp, nhãn mác.</li>
+                        <li>Sản phẩm đổi không có dấu hiệu đã qua sử dụng, không giặt tẩy, bám bẩn, biến dạng.</li>
+                        <li>Trong trường hợp sản phẩm - size bạn muốn đổi không còn hàng trong hệ thống. Vui lòng chọn sản phẩm khác.</li>
+                        <li>Không hoàn trả bằng tiền mặt dù bất cứ trong trường hợp nào. Mong bạn thông cảm.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content content_2">
+            <h1>ĐỀ XUẤT CHO BẠN</h1>
+            <div class="product_recomment">
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content content_2">
+            <h1>SẢN PHẨM ĐÃ XEM</h1>
+            <div class="product_recomment">
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
                 </div>
             </div>
         </div>

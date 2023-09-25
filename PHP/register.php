@@ -7,27 +7,105 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/register.css" type="text/css">
 </head>
 <body>
+
+<?php
+    //Yêu cầu kết nối với database
+    require_once 'ConnectData.php';
+    $emailErr = $phoneNumberErr = $passWordErr = $fullNameErr = "";
+    $email = $phoneNumber = $passWord = $fullName = "";
+    
+    //Kiểm tra các trường dữ liệu
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["email"])) {
+            $emailErr = "* Email là bắt buộc";
+        } else {
+            $email = test_input($_POST["email"]);
+        }
+
+        //Kiểm tra email đăng ký đã tồn tại chưa
+        // Kiểm tra xem email đã tồn tại trong cơ sở dữ liệu hay chưa
+        $checkEmailQuery = "SELECT * FROM user WHERE email = ?";
+        $checkEmailStmt = $conn->prepare($checkEmailQuery);
+        $checkEmailStmt->bind_param("s", $email);
+        $checkEmailStmt->execute();
+        $result = $checkEmailStmt->get_result();
+
+        if (empty($_POST["phoneNumber"])) {
+            $phoneNumberErr = "* Số điện thoại là bắt buộc";
+        } else {
+            $phoneNumber = test_input($_POST["phoneNumber"]);
+        }
+
+        if (empty($_POST["passWord"])) {
+            $passWordErr = "* Mật khẩu là bắt buộc";
+        } else {
+            $passWord = test_input($_POST["passWord"]);
+        }
+
+        if (empty($_POST["fullName"])) {
+            $fullNameErr = "* Họ và tên là bắt buộc";
+        } else {
+            $fullName = test_input($_POST["fullName"]);
+        }
+
+        if ($result->num_rows > 0) {
+            // Email đã tồn tại trong cơ sở dữ liệu, thông báo lỗi
+            $emailErr = "* Email đăng ký đã tồn tại";
+        } else {
+            // Email không tồn tại trong cơ sở dữ liệu, tiếp tục chèn dữ liệu
+            if (empty($emailErr) && empty($phoneNumberErr) && empty($passWordErr) && empty($fullNameErr)) {
+                if ($conn->connect_error) {
+                    die('Kết nối không thành công : ' . $conn->connect_error);
+                } else {
+                    $stmt = $conn->prepare("INSERT INTO user (email, phoneNumber, passWord, fullName) VALUES (?, ?, ?, ?)");
+                    $stmt->bind_param("ssss", $email, $phoneNumber, $passWord, $fullName);
+    
+                    if ($stmt->execute()) {
+                        // Chuyển hướng đến trang trang chủ sau khi thêm dữ liệu thành công
+                        header("Location: register_success.php");
+                        exit;
+                    } else {
+                        echo "Lỗi khi thêm dữ liệu: " . $stmt->error;
+                    }
+                    
+                    $checkEmailStmt->close();
+                    $stmt->close();
+                    $conn->close();
+                }
+            }
+        }
+    }
+   
+    // Hàm này dùng để kiểm tra và xử lý dữ liệu đầu vào
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>
+
     <header>
         <div class="header_1">
             <ul>
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.html"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
             <div class="header_logo">
-                <a href="index.html"><img src="../Picture/Icon/Icon_logo.png"></a>
+                <a href="index.php"><img src="../Picture/Icon/Icon_logo.png"></a>
             </div>
             <div class="header_category">
                 <ul>
                     <li>
-                        <a href="product.html">SẢN PHẨM</a>
+                        <a href="product.php">SẢN PHẨM</a>
                         <div class="header_hover_product_category">
                             <div class="category_product_hover">
                                 <a href="">
@@ -46,7 +124,7 @@
                                 </a>
                             </div>
                             <div class="category_product_hover">
-                                <a href="SaleOff.html">
+                                <a href="SaleOff.php">
                                     <div class="img_category_product">
                                         <img src="../Picture/Img/Img_banner_safeOf.jpg">
                                     </div>
@@ -140,19 +218,38 @@
     <main>
         <div class="content">
             <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
-            <div class="login">
-                <div class="login_cover">
-                    <label for="userName">Tên tài khoản</label>
-                    <input type="text" id="userName" value placeholder="Username">
-                    <label for="userName">Mật khẩu</label>
-                    <input type="text" id="userName" value placeholder="Passwork">
-                    <button type="button" id="login_button">ĐĂNG NHẬP</button>
-                    <p>Bạn chưa là thành viên</p>
-                    <div class="register">
-                        <a href="register.html">ĐĂNG KÝ</a>
-                    </div> 
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <div class="form_group">
+                    <label for="input_1">Email của bạn</label>
+                    <input placeholder="Email" type="text" value="<?php echo $email;?>" id="input_1" name="email">
+                    <br><span class="error"><?php echo $emailErr;?></span>
                 </div>
-            </div>
+                <div class="form_group">
+                    <label for="input_2">Điện thoại</label>
+                    <input placeholder="Số điện thoại" type="text" value="<?php echo $phoneNumber?>" id="input_2" name="phoneNumber">
+                    <br><span class="error"><?php echo $phoneNumberErr?></span>
+                </div>
+                <div class="form_group">
+                    <label for="input_3">Mật khẩu của bạn</label>
+                    <input placeholder="Mật khẩu" type="text" value="<?php echo $passWord?>" id="input_3" name="passWord">
+                    <br><span class="error"><?php echo $passWordErr?></span>
+                </div>
+                <div class="form_group">
+                    <label for="input_4">Họ và tên</label>
+                    <input placeholder="Vui lòng nhập tên tiếng Việt có dấu" type="text" value="<?php echo $fullName?>" id="input_4" name="fullName">
+                    <br><span class="error"><?php echo $fullNameErr?></span>
+                </div>
+                <div class="form_group checkbox_form">
+                    <input type="checkbox" value id="input_5" name="subscribe" value="yes">
+                    <label for="input_5">Tôi đăng ký vào danh sách gửi thư và đồng ý với điều khoản sử dụng của Footsteps In Fashion</label>
+                </div>
+                <div class="register">
+                    <button type="submit">ĐĂNG KÝ</button>
+                </div>
+                <div class="login">
+                    <a href="login.php">Đăng nhập</a>
+                </div>
+            </form>
         </div>
     </main>
     <footer>

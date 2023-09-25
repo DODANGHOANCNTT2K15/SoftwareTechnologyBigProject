@@ -7,27 +7,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/product.css" type="text/css">
 </head>
 <body>
+    <div class="contract_static">
+        <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
+        <a href=""><img src="../Picture/Icon/Icon_youtube.png" alt=""></a>
+        <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
+    </div>
+    <div class="cart_static">
+        <p>0</p>
+        <a href="">
+            <img src="../Picture/Icon/Icon_cart_static.png">
+        </a>
+    </div>
     <header>
         <div class="header_1">
             <ul>
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.html"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
             <div class="header_logo">
-                <a href="index.html"><img src="../Picture/Icon/Icon_logo.png"></a>
+                <a href="index.php"><img src="../Picture/Icon/Icon_logo.png"></a>
             </div>
             <div class="header_category">
                 <ul>
                     <li>
-                        <a href="product.html">SẢN PHẨM</a>
+                        <a href="product.php">SẢN PHẨM</a>
                         <div class="header_hover_product_category">
                             <div class="category_product_hover">
                                 <a href="">
@@ -46,7 +57,7 @@
                                 </a>
                             </div>
                             <div class="category_product_hover">
-                                <a href="SaleOff.html">
+                                <a href="SaleOff.php">
                                     <div class="img_category_product">
                                         <img src="../Picture/Img/Img_banner_safeOf.jpg">
                                     </div>
@@ -121,7 +132,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="">
+                    <li><a href="../HTML/about_me.php">
                         <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
                     </a></li>
                 </ul>
@@ -138,19 +149,144 @@
         </div>
     </header>
     <main>
-        <div class="content">
-            <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
-            <div class="login">
-                <div class="login_cover">
-                    <label for="userName">Tên tài khoản</label>
-                    <input type="text" id="userName" value placeholder="Username">
-                    <label for="userName">Mật khẩu</label>
-                    <input type="text" id="userName" value placeholder="Passwork">
-                    <button type="button" id="login_button">ĐĂNG NHẬP</button>
-                    <p>Bạn chưa là thành viên</p>
-                    <div class="register">
-                        <a href="register.html">ĐĂNG KÝ</a>
-                    </div> 
+        <div class="content_all">
+            <div class="main_category">
+                <div class="main_category_1 main_category_">
+                    <ul>
+                        <li>
+                            <h1><a href="">TẤT CẢ</a></h1>
+                        </li>
+                        <li>
+                            <h1><a href="">NAM</a></h1>
+                        </li>
+                        <li>
+                            <h1><a href="">NỮ</a></h1>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main_category_2 main_category_ main_category_text_title">
+                    <h1>TRẠNG THÁI</h1>
+                    <ul>
+                        <li><a href="">Limited Edition</a></li>
+                        <li><a href="">Online Only</a></li>
+                        <li><a href="">Sale off</a></li>
+                        <li><a href="">New Arrival</a></li>
+                    </ul>
+                </div>
+                <div class="main_category_3 main_category_ main_category_text_title">
+                    <h1>KIỂU DÁNG</h1>
+                    <ul>
+                        <li><a href="">Low Top</a></li>
+                        <li><a href="">High Top</a></li>
+                        <li><a href="">Mid Top</a></li>
+                        <li><a href="">Mule</a></li>
+                    </ul>
+                </div>
+                <div class="main_category_4 main_category_ main_category_text_title">
+                    <h1>DÒNG SẢN PHẨM</h1>
+                    <ul>
+                        <li><a href="">Batas</a></li>
+                        <li><a href="">Urbas</a></li>
+                        <li><a href="">Vintas</a></li>
+                        <li><a href="">Pattas</a></li>
+                    </ul>
+                </div>
+                <div class="main_category_5 main_category_ main_category_text_title">
+                    <h1>GIÁ</h1>
+                    <ul>
+                        <li><a href="">< 200K</a></li>
+                        <li><a href="">200K - 299K</a></li>
+                        <li><a href="">300K - 399K</a></li>
+                        <li><a href="">400K - 499K</a></li>
+                        <li><a href="">> 500K</a></li>
+                    </ul>
+                </div>
+                <div class="main_category_6 main_category_ main_category_text_title">
+                    <h1>CHẤT LIỆU</h1>
+                    <ul>
+                        <li><a href="">Canvas</a></li>
+                        <li><a href="">Cottons</a></li>
+                        <li><a href="">Acrylic</a></li>
+                        <li><a href="">Da</a></li>
+                        <li><a href="">Da lộn</a></li>
+                        <li><a href="">Polyester</a></li>
+                    </ul>
+                </div>
+                <div class="main_category_7 main_category_ main_category_text_title">
+                    <h1>MÀU SẮC</h1>
+                </div>
+            </div>
+            <div class="main_content">
+                <div class="main_banner">
+                    <img src="../Picture/Img/Img_bannner_product.jpg" alt="">
+                </div>
+                <div class="main_product_content">
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../HTML/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

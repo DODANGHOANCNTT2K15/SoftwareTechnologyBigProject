@@ -7,27 +7,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/about_me.css" type="text/css">
 </head>
 <body>
+    <div class="contract_static">
+        <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
+        <a href=""><img src="../Picture/Icon/Icon_youtube.png" alt=""></a>
+        <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
+    </div>
+    <div class="cart_static">
+        <p>0</p>
+        <a href="">
+            <img src="../Picture/Icon/Icon_cart_static.png">
+        </a>
+    </div>
     <header>
         <div class="header_1">
             <ul>
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.html"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
             <div class="header_logo">
-                <a href="index.html"><img src="../Picture/Icon/Icon_logo.png"></a>
+                <a href="index.php"><img src="../Picture/Icon/Icon_logo.png"></a>
             </div>
             <div class="header_category">
                 <ul>
                     <li>
-                        <a href="product.html">SẢN PHẨM</a>
+                        <a href="product.php">SẢN PHẨM</a>
                         <div class="header_hover_product_category">
                             <div class="category_product_hover">
                                 <a href="">
@@ -46,7 +57,7 @@
                                 </a>
                             </div>
                             <div class="category_product_hover">
-                                <a href="SaleOff.html">
+                                <a href="SaleOff.php">
                                     <div class="img_category_product">
                                         <img src="../Picture/Img/Img_banner_safeOf.jpg">
                                     </div>
@@ -138,19 +149,50 @@
         </div>
     </header>
     <main>
-        <div class="content">
-            <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
-            <div class="login">
-                <div class="login_cover">
-                    <label for="userName">Tên tài khoản</label>
-                    <input type="text" id="userName" value placeholder="Username">
-                    <label for="userName">Mật khẩu</label>
-                    <input type="text" id="userName" value placeholder="Passwork">
-                    <button type="button" id="login_button">ĐĂNG NHẬP</button>
-                    <p>Bạn chưa là thành viên</p>
-                    <div class="register">
-                        <a href="register.html">ĐĂNG KÝ</a>
-                    </div> 
+        <div class="main_content main_content_1">
+            <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
+        </div>
+        <div class="main_content main_content_2">
+            <div class="main_content_2_img">
+                <a href=""><img src="../Picture/Img/Img_banner_content_3.png"></a>
+            </div>
+            <div class="main_content_2_title">
+                <a href="">VINTAS SAIGON 1908S</a>
+                <p>Với bộ 5 sản phẩm, Vintas Saigon 1980s Pack đem đến một sự lựa chọn “cũ kỹ thú vị” cho những người trẻ sống giữa thời hiện đại nhưng lại yêu nét bình dị của Sài Gòn ngày xưa ...</p>
+                <a href="">Đọc thêm</a>
+            </div>
+        </div>
+        <div class="main_content main_content_3">
+            <div class="main_content_cover">
+                <div class="main_content_new">
+                    <div class="main_content_new_img">
+                        <a href=""><img src="../Picture/Img/Img_banner_hotnew_1.jpg"></a>
+                    </div>
+                    <div class="main_content_new_title">
+                        <h1><a href="">VINTAS SAIGON 1908S</a></h1>
+                        <p>Với bộ 5 sản phẩm, Vintas Saigon 1980s Pack đem đến một sự lựa chọn “cũ kỹ thú vị” cho những người trẻ sống giữa thời hiện đại nhưng lại yêu nét bình dị của Sài Gòn ngày xưa ...</p>
+                        <a href="">Đọc thêm</a>
+                    </div>
+                </div>
+                <div class="main_content_new">
+                    <div class="main_content_new_img">
+                        <a href=""><img src="../Picture/Img/Img_banner_hotnew_1.jpg"></a>
+                    </div>
+                    <div class="main_content_new_title">
+                        <h1><a href="">VINTAS SAIGON 1908S</a></h1>
+                        <p>Với bộ 5 sản phẩm, Vintas Saigon 1980s Pack đem đến một sự lựa chọn “cũ kỹ thú vị” cho những người trẻ sống giữa thời hiện đại nhưng lại yêu nét bình dị của Sài Gòn ngày xưa ...</p>
+                        <a href="">Đọc thêm</a>
+                    </div>
+                </div>
+                <div class="main_content_new">
+                    <div class="main_content_new_img">
+                        <a href=""><img src="../Picture/Img/Img_banner_hotnew_1.jpg"></a>
+                    </div>
+                    <div class="main_content_new_title">
+                        <h1><a href="">VINTAS SAIGON 1908S</a></h1>
+                        <p>Với bộ 5 sản phẩm, Vintas Saigon 1980s Pack đem đến một sự lựa chọn “cũ kỹ thú vị” cho những người trẻ sống giữa thời hiện đại nhưng lại yêu nét bình dị của Sài Gòn ngày xưa ...</p>
+                        <a href="">Đọc thêm</a>
+                    </div>
                 </div>
             </div>
         </div>
