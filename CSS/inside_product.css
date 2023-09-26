@@ -287,19 +287,6 @@ main{
                         justify-content: center;
                         align-items: center;
                     }
-                    .color button{
-                        width: 90%;
-                        height: 90%;
-                    }
-                        .color_1 button{
-                            background-color: black;
-                        }
-                        .color_2 button{
-                            background-color: white;
-                        }
-                        .color_3 button{
-                            background-color: green;
-                        }
                 .content_inf_main p:last-child{
                     font-size: 35px;
                     color: orangered;
