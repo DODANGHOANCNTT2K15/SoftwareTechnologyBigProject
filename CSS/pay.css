@@ -223,153 +223,28 @@ main{
             width: 68%;
             /* background-color: blue; */
         }   
-            .left_top{
-                width: 100%;
-                /* background-color: bisque; */
-                padding: 20px 0px;
+            .left h1{
+                padding: 10px 10px;
+                background-color: rgb(70, 70, 70);
+                box-sizing: border-box;
             }
-                .left_top_header{
-                    width: 100%;
-                    border-bottom: 2px solid white;
-                }
-                    .left_top_header h1{
-                        margin: 20px;
-                        padding: 0px;
-                    }
-                .left_top_add_product{
-                    width: 100%;
-                    /* background-color: rgb(54, 54, 101); */
-                    box-sizing: border-box;
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 20px;
-                }
-                    .add_product{
-                        display: flex;
-                    }
-                    .add_product_left{
-                        width: 50%;
-                        
-                    }
-                        .add_product_left img{
-                            width: 80%;
-                            margin: 20px 20px;
-                        }
-                        .add_product_right{
-                            padding: 20px;
-                        }
-                        .add_product_right a{
-                            font-size: 20px;
-                            color: white;
-                            text-decoration: none;
-                        }
-                        .add_product_right p:last-child{
-                            color: orangered;
-                            font-size: 30px;
-                        }
-                        .add_product_right button{
-                            width: 50%;
-                            height: 50px;
-                            background-color: orangered;
-                            color: white;
-                            font-size: 30px;
-                            font-weight: bold;
-                        }
-            .left_bottom{
-                width: 100%;
-                /* background-color: aqua; */
-            }          
-                .left_bottom_header{
-                    width: 100%;
-                    padding: 20px 20px;
-                    background-color: rgb(70, 70, 70);
-                    box-sizing: border-box;
-
-                }
-                    .left_bottom_header h1{
-                        margin: 0px;
-                    }
-                .cover_product{
-                    height: fit-content;
-                    border-bottom: 2px solid rgb(77, 77, 77);
-                }
-                .product{
-                    width: 100%;
-                    display: flex;
-                    margin: 30px 0px;
-                    box-sizing: border-box;
-                    justify-content: space-around;
-                }
-                    .product_img{
-                        width: 250px;
-                        height: 250px;
-                        overflow: hidden;
-                    }
-                        .product_img img{
-                            width: 95%;
-                        }
-                    .product_imf{
-                        width: 50%;
-                        padding: 0px 20px;
-                    }
-                        .select{
-                            display: flex;
-                            justify-content: space-between;
-                        }
-                            .size{
-                                width: 40%;
-                            }
-                            .size select{
-                                width: 100%;
-                                height: 50px;
-                                padding: 0px 20px;
-                                background-color: transparent;
-                                color: white;
-                            }
-                    .delect p{
-                        margin: 24px 0px;
-                        color: orangered;
-                    }
-                        .delect h1{
-                            color: orangered;
-                        }
-                        .delect button{
-                            width: 100%;
-                            height: 40px;
-                            margin: 10px 0px;
-                            background-color: rgb(68, 68, 68);
-                        }
-                        .delect img{
-                            width: 30px;
-                        }
-            .back{
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                margin-top: 100px;
+            .left_top input{
+                width: 80%;
+                height: 40px;
+                margin: 20px 0px;
+                color: white;
+                background-color: transparent;
+                border: 2px solid white;
+                padding: 5px 20px;
+                font-size: 1.3rem;
             }
-                .back button{
-                    width: 300px;
-                    height: 50px;
-                    color: white;
-                    background-color: rgb(90, 90, 90);
-                    font-size: 20px;
-                    font-weight: bold;
-                }
-                .back .back_home{
-                    width: 300px;
-                    height: 50px;
-                    background-color: rgb(90, 90, 90);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-                .back_home a{
-                    font-size: 20px;
-                    font-weight: bold;
-                    text-decoration: none;
-                    color: white;
-                }
+            .left_bottom label{
+                font-size: 1.4rem;
+            }
+            .left_bottom input, label{
+                margin: 20px;
+            }
+            
         .right{
             width: 30%;
             /* background-color: aqua; */
