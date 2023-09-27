@@ -11,6 +11,7 @@
 </head>
 <body>
 <?php
+    session_start();
     //Yêu cầu kết nối với database
     require_once 'ConnectData.php';
     $emailLoginErr = $passwordLoginErr = "";

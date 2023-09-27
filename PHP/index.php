@@ -27,7 +27,22 @@
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li class="dropdown">
+                    <?php
+                    session_start();
+                    if (isset($_SESSION["emailLogin"])) {
+                        // Nếu người dùng đã đăng nhập, hiển thị tên của họ
+                        echo '<a href="profile.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
+                        echo '<div class="dropdown-content">
+                                <a href="edit_profile.php">Chỉnh sửa thông tin cá nhân</a>
+                                <a href="logout.php">Đăng xuất</a>
+                            </div>';
+                    } else {
+                        // Nếu người dùng chưa đăng nhập, hiển thị "Đăng nhập"
+                        echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
+                    }
+                    ?>
+                </li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
