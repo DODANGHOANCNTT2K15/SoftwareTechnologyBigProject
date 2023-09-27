@@ -1,0 +1,14 @@
+.color button{
+    width: 90%;
+    height: 90%;
+}
+    .color_1 button{
+        background-color: rgb(246, 246, 246);
+    }
+    .color_2 button{
+        background-color: white;
+    }
+
+    .color_3 button{
+        background-color: black;
+    }
