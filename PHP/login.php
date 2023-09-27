@@ -197,11 +197,11 @@
                     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <label for="emailLogin">Email đăng nhập: </label>
                     <input type="text" id="emailLogin" placeholder="Email" name="emailLogin">
-                    <br><?php echo $emailLoginErr?>
+                    <br><span class="erorr"><?php echo $emailLoginErr;?></span>
 
                     <label for="userName">Mật khẩu: </label>
                     <input type="text" id="passwordLogin" placeholder="Mật khẩu" name="passwordLogin">
-                    <br><?php echo $passwordLoginErr?>
+                    <br><span class="error"><?php echo $passwordLoginErr;?></span>
 
                     <button type="submit" id="login_button">ĐĂNG NHẬP</button>
                     <p>Bạn chưa là thành viên</p>

@@ -382,3 +382,8 @@ footer{
         .footer_2 p{
             font-size: 30px;
         }
+
+
+.error {
+    color: red;
+}
