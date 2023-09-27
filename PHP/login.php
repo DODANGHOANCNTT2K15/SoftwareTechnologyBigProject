@@ -32,7 +32,7 @@
         }
 
         // Kiểm tra emailLogin và mật khẩu trong cơ sở dữ liệu
-        $query = "SELECT * FROM user WHERE email = ? AND password = ?";
+        $query = "SELECT user_id FROM user WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("ss", $emailLogin, $passwordLogin);
         $stmt->execute();
@@ -40,9 +40,11 @@
 
         // Kiểm tra xem có lỗi không
         if (empty($emailLoginErr) && empty($passwordLoginErr)) {
-            if ($result->num_rows !== 0 ) {
+            if ($result->num_rows !== 0) {
                 // Đăng nhập thành công, thực hiện các hành động sau đây
-                $_SESSION["emailLogin"] = $emailLogin; // Lưu emailLogin vào phiên làm việc
+                $user = $result->fetch_assoc();
+                $_SESSION["user_id"] = $user["user_id"];
+                $_SESSION['emailLogin'] = $emailLogin;// Lưu user_id vào phiên làm việc
 
                 // Chuyển hướng đến trang sau khi đăng nhập thành công
                 header("Location: index.php");
@@ -52,6 +54,7 @@
                 $passwordLoginErr = "* Email hoặc mật khẩu không đúng";
             }
         }
+
     }
     // Hàm này dùng để kiểm tra và xử lý dữ liệu đầu vào
     function test_input($data) {
@@ -68,7 +71,21 @@
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li class="dropdown">
+                    <?php
+                    if (isset($_SESSION["emailLogin"])) {
+                        // Nếu người dùng đã đăng nhập, hiển thị tên của họ
+                        echo '<a href="profile.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
+                        echo '<div class="dropdown-content">
+                                <a href="edit_profile.php">Chỉnh sửa thông tin cá nhân</a>
+                                <a href="logout.php">Đăng xuất</a>
+                            </div>';
+                    } else {
+                        // Nếu người dùng chưa đăng nhập, hiển thị "Đăng nhập"
+                        echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
+                    }
+                    ?>
+                </li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>

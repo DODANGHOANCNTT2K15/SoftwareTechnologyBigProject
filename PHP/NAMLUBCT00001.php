@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/SaleOff.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/inside_product.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/NAMLUBCT00001.css" type="text/css"> <!-- CSS riêng cho sản phẩm  --> 
 </head>
 <body>
     <?php
@@ -20,7 +21,7 @@
     </div>
     <div class="cart_static">
         <p>0</p>
-        <a href="">
+        <a href="cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
     </div>
@@ -44,8 +45,8 @@
                         echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
                     }
                     ?>
-                </li>>
-                <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
+                </li>
+                <li><a href="cart.php"><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
@@ -149,7 +150,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="">
+                    <li><a href="about_me.php">
                         <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
                     </a></li>
                 </ul>
@@ -166,130 +167,184 @@
         </div>
     </header>
     <main>
-        <div class="content">
-            <div class="banner">
-                <img src="../Picture/Img/Img_banner_saleOf_Page.jpg">
+        <div class="content content_1">
+            <div class="content_left">
+                <div class="content_left_img_main">
+                    <img src="../Picture/Product/NAMLUBCT00001/_01_black.jpeg" id="mainImage">
+                </div>
+                <div class="content_left_img_main_second">
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_01_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg1"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_02_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg2"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_03_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg3"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_04_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg4"></div>
+                </div>
+            </div>            
+            <div class="content_right">
+                <div class="content_right_select content_inf_main">
+                    <h1>PATTAS TOMO - WORKADAY-LOW TOP-REAL TEAL</h1>
+                    <p>Mã sản phẩm : <span>AV00150</span></p>
+                    <p>Tình trạng : <span>New Arrival</span></p>
+                    <p>580.000 VND</p>
+                </div>
+                <div class="content_right_select content_color">
+                    <!--Các button chọn màu-->
+                    <div class="color color_1">
+                        <button onclick="color_black()"></button>
+                    </div>
+                    <div class="color color_2">
+                        <button onclick="color_white()"></button>
+                    </div>
+                </div>
+                <div class="content_right_select">
+                    <div class="select_sizeAndDiamondsuit">
+                        <div class="size">
+                            <h1>SIZE</h1>
+                            <select>
+                                <option value="36" selected>36</option>
+                                <option value="">37</option>
+                                <option value="">38</option>
+                                <option value="">39</option>
+                                <option value="">40</option>
+                                <option value="">41</option>
+                                <option value="">42</option>
+                            </select>
+                        </div>
+                        <div class="amount">
+                            <h1>SỐ LƯỢNG</h1>
+                            <select>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="addCartAndHeart">
+                        <button>THÊM VÀO GIỎ HÀNG</button>
+                        <button>
+                            <img src="../Picture/Icon/Icon_heart_2.png">
+                        </button>
+                    </div>
+                    <div class="pay">
+                        <a href="">THANH TOÁN</a>
+                    </div>
+                </div>
+                <div class="content_right_select">
+                    <h1>THÔNG TIN SẢN PHẨM</h1>
+                    <div class="content_imf">
+                        <ul>
+                            <li>Sex; Unisex</li>
+                            <li>Chất liệu: Canvas</li>
+                            <li>Thể loại: Low Top</li>
+                        </ul>
+                    </div>
+                    <img src="../Picture/Img/Img_size_shoes.jpg">
+                </div>
+                <div class="content_right_select">
+                    <h1>QUY ĐỔI SẢN PHẨM</h1>
+                    <ul>
+                        <li>Chỉ đổi hàng 1 lần duy nhất, mong bạn cân nhắc kĩ trước khi quyết định.</li>
+                        <li>Thời hạn đổi sản phẩm khi mua trực tiếp tại cửa hàng là 07 ngày, kể từ ngày mua. Đổi sản phẩm khi mua online là 14 ngày, kể từ ngày nhận hàng.</li>
+                        <li>Sản phẩm đổi phải kèm hóa đơn. Bắt buộc phải còn nguyên tem, hộp, nhãn mác.</li>
+                        <li>Sản phẩm đổi không có dấu hiệu đã qua sử dụng, không giặt tẩy, bám bẩn, biến dạng.</li>
+                        <li>Trong trường hợp sản phẩm - size bạn muốn đổi không còn hàng trong hệ thống. Vui lòng chọn sản phẩm khác.</li>
+                        <li>Không hoàn trả bằng tiền mặt dù bất cứ trong trường hợp nào. Mong bạn thông cảm.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="product">
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
+        </div>
+        <div class="content content_2">
+            <h1>ĐỀ XUẤT CHO BẠN</h1>
+            <div class="product_recomment">
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                     </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
-                    </div>
-                </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
-                    </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
                     </div>
                 </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                     </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
-                    </div>
-                </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
-                    </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
                     </div>
                 </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                     </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
-                    </div>
-                </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
-                    </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
                     </div>
                 </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                     </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
-                    </div>
-                </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
-                    </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
                     </div>
                 </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
+            </div>
+        </div>
+        <div class="content content_2">
+            <h1>SẢN PHẨM ĐÃ XEM</h1>
+            <div class="product_recomment">
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                     </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
-                    </div>
-                </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
-                    </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
                     </div>
                 </div>
-                <div class="product_item">
-                    <div class="product_item_cover">
-                        <a href=""><img src="../Picture/Product/NALTUBCV00001/_01.jpeg"></a>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
                     </div>
-                    <div class="product_item_title">
-                        <p>Online Only</p>
-                        <h1><a href="">Tee - Ananas Cropped Symbol</a></h1>
-                        <p>Blue</p>
-                        <p>150.000 VND <span>299.000 VND</span></p>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
+                    </div>
+                </div>
+                <div class="product_recomment_item">
+                    <div class="product_recomment_item_cover">
+                        <a href=""><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                    </div>
+                    <div class="product_recomment_item_title">
+                        <h1><a href="">TOMO - LOW TOP - BLARNEY</a></h1>
+                        <p>Red</p>
+                        <p>730.000 VND</p>
                     </div>
                 </div>
             </div>
@@ -371,5 +426,7 @@
             <p>Copyright © 2023 Footsteps In Fashion. All rights reserved.</p>
         </div>
     </footer>
+    <script src="../JavaScript/inside_product.js"></script>
+    <script src="../JavaScript/NAMLUBCT00001.js"></script> <!--JavsScript riêng cho sản phẩm-->
 </body>
 </html>

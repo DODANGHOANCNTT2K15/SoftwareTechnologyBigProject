@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../CSS/index.css" type="text/css">
 </head>
 <body>
+    <?php
+         session_start();
+    ?>
     <div class="contract_static">
         <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
         <a href=""><img src="../Picture/Icon/Icon_youtube.png" alt=""></a>
@@ -29,7 +32,6 @@
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
                 <li class="dropdown">
                     <?php
-                    session_start();
                     if (isset($_SESSION["emailLogin"])) {
                         // Nếu người dùng đã đăng nhập, hiển thị tên của họ
                         echo '<a href="profile.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
@@ -43,7 +45,7 @@
                     }
                     ?>
                 </li>
-                <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
+                <li><a href="../PHP/cart.php"><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">

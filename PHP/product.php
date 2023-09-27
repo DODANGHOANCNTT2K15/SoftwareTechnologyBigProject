@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footsteps In Fashion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../CSS/product.css" type="text/css">
 </head>
+
 <body>
+    <?php
+         session_start();
+    ?>
     <div class="contract_static">
         <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
         <a href=""><img src="../Picture/Icon/Icon_youtube.png" alt=""></a>
@@ -27,7 +34,21 @@
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
+                <li class="dropdown">
+                    <?php
+                    if (isset($_SESSION["emailLogin"])) {
+                        // Nếu người dùng đã đăng nhập, hiển thị tên của họ
+                        echo '<a href="profile.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
+                        echo '<div class="dropdown-content">
+                                <a href="edit_profile.php">Chỉnh sửa thông tin cá nhân</a>
+                                <a href="logout.php">Đăng xuất</a>
+                            </div>';
+                    } else {
+                        // Nếu người dùng chưa đăng nhập, hiển thị "Đăng nhập"
+                        echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
+                    }
+                    ?>
+                </li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
@@ -133,8 +154,8 @@
                         </div>
                     </li>
                     <li><a href="../PHP/about_me.php">
-                        <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
-                    </a></li>
+                            <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
+                        </a></li>
                 </ul>
             </div>
             <div class="header_searchBox">
@@ -194,7 +215,9 @@
                 <div class="main_category_5 main_category_ main_category_text_title">
                     <h1>GIÁ</h1>
                     <ul>
-                        <li><a href="">< 200K</a></li>
+                        <li><a href="">
+                                < 200K</a>
+                        </li>
                         <li><a href="">200K - 299K</a></li>
                         <li><a href="">300K - 399K</a></li>
                         <li><a href="">400K - 499K</a></li>
@@ -221,6 +244,142 @@
                     <img src="../Picture/Img/Img_bannner_product.jpg" alt="">
                 </div>
                 <div class="main_product_content">
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/NALTUBCV00001.php"><img src="../Picture/Img_shoes/Img_shoes_02 .jpeg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>720.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/NALTUBCV00002.php"><img src="../Picture/Img_shoes/Img_shoes_03.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Workaday - Low Top</a></h2>
+                            <p>Real Teal</p>
+                            <p>580.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/NAMLUBCT00001.php"><img
+                                    src="../Picture/Product/NAMLUBCT00001/_02_white.jpeg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Mid Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/NAHTUBCV00001.php"><img
+                                    src="../Picture/Product/NAHTUBCV00001/_02_white.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Basas Bumper Gum EXT NE - High Top</a></h2>
+                            <p>Offwhite/Gum</p>
+                            <p>650.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/NALTUBCV00003.php"><img
+                                    src="../Picture/Product/NALTUBCV00003/_02_ghi.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Basas RAW - Low Top</a></h2>
+                            <p>Rustic</p>
+                            <p>610.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/NAMLUBCV00001.php"><img
+                                    src="../Picture/Product/NAMLUBCV00001/_02_yellow.jpeg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top - High Top - Mid Top</a></h2>
+                            <p>Blarney</p>
+                            <p>720.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="product_content_item">
+                        <div class="product_content_item_img">
+                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
+                        </div>
+                        <div class="product_content_item_inf">
+                            <p>New Arrival</p>
+                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
+                            <p>Blarney</p>
+                            <p>760.000 VND</p>
+                        </div>
+                    </div>
                     <div class="product_content_item">
                         <div class="product_content_item_img">
                             <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
@@ -368,4 +527,5 @@
         </div>
     </footer>
 </body>
+
 </html>
