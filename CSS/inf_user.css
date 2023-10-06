@@ -309,10 +309,10 @@ main{
         }
             .change_imf_cover{
                 width: 50vw;
-                height: 90vh;
+                height: 70vh;
                 background-color: rgb(255, 255, 255);
                 border: 2px solid black;
-                position: relative;
+                position: relative; 
                 padding: 50px;
                 box-sizing: border-box;
                 color: black;
@@ -323,8 +323,8 @@ main{
                     height: 70px;
                     background-color: rgb(255, 85, 0);
                     position: absolute;
-                    top: -35px;
-                    left: 950px;
+                    top: 10px;
+                    right: 2vw;
                     border: 2px solid black;
                     color: rgb(255, 255, 255);
                     display: flex;
@@ -369,7 +369,182 @@ main{
                     padding-left: 50px;
                     cursor: pointer;
                 }
-
+        .change_Email_user{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .change_Email_user .change_Email_cover{
+                width: 50vw;
+                height: 40vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .change_Email_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+                .change_Email_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 50px;
+                }
+        .change_Passwork_imf{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .change_Passwork_imf>.change_Passwork_cover{
+                width: 50vw;
+                height: 50vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .change_Passwork_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+                .change_Passwork_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                }
+        .change_Phone_imf{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .change_Phone_imf>.change_Phone_cover{
+                width: 50vw;
+                height: 40vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .change_Phone_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                }
+                .change_Phone_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+        .add_address_user{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .add_address_user>.add_address_user_cover{
+                width: 50vw;
+                height: 75vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .add_address_user_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                }
+                .add_address_user_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
 footer{
     /* background-color: aquamarine; */
     height: fit-content;

@@ -10,11 +10,54 @@
     <link rel="stylesheet" href="../CSS/inf_user.css" type="text/css">
 </head>
 <body>
-    <div class="change_information_user">
-        <div class="change_imf_cover">
-            <div class="exit_change_imf">
-                X
+    <div class="change_Phone_imf">
+        <div class="exit_change_imf">
+            X
+        </div>
+        <div class="change_Phone_cover">
+            <h1>CHỈNH SỬA SỐ ĐIỆN THOẠI CỦA BẠN</h1>
+            <div class="input_phoneNumber">
+                <p>Số điện thoại <span>*</span></p>
+                <input type="text" placeholder="0986716242">
             </div>
+            <button>CẬP NHẬT THÔNG TIN</button>
+        </div>
+    </div>
+    <div class="change_Passwork_imf">
+        <div class="exit_change_imf">
+            X
+        </div>
+        <div class="change_Passwork_cover">
+            <h1>CHỈNH SỬA MẬT KHẨU CỦA BẠN</h1>
+            <div class="input_passworkOld">
+                <p>Mật khẩu cũ <span>*</span></p>
+                <input type="text" placeholder="***********">
+            </div>
+            <div class="input_passworkNew">
+                <p>Mật khẩu mới <span>*</span></p>
+                <input type="text" placeholder="***********">
+            </div>
+            <button>CẬP NHẬT THÔNG TIN</button>
+        </div>
+    </div>
+    <div class="change_Email_user">
+        <div class="exit_change_imf">
+            X
+        </div>
+        <div class="change_Email_cover">
+            <h1>CHỈNH SỬA EMAIL CỦA BẠN</h1>
+            <div class="input_Email">
+                <p>EMAIL <span>*</span></p>
+                <input type="text" placeholder="dodanghoana12017@gmail.com">
+            </div>
+            <button>CẬP NHẬT THÔNG TIN</button>
+        </div>
+    </div>
+    <div class="change_information_user">
+        <div class="exit_change_imf">
+            X
+        </div>
+        <div class="change_imf_cover">
             <h1>CHỈNH SỬA THÔNG TIN CỦA BẠN</h1>
             <div class="input_userName">
                 <p>Tên <span>*</span></p>
@@ -46,7 +89,31 @@
                 <input type="radio" name="sex" id="sex_3" class="input_sex"><label for="sex_3">KHÁC</label>
             </div>
             <button>CẬP NHẬT THÔNG TIN</button>
-            <button onclick="exit()">HỦY</button>
+        </div>
+    </div>
+    <div class="add_address_user">
+        <div class="exit_change_imf">
+            X
+        </div>
+        <div class="add_address_user_cover">
+            <h1>THÊM ĐỊA CHỈ MỚI</h1>
+            <div class="input_userName">
+                <p>Tên <span>*</span></p>
+                <input type="text" placeholder="Hoàn">
+            </div>
+            <div class="input_userName">
+                <p>Họ <span>*</span></p>
+                <input type="text" placeholder="Đỗ Đăng">
+            </div>
+            <div class="input_userName">
+                <p>Địa chỉ <span>*</span></p>
+                <input type="text" placeholder="Sô nhà trên mây, Ngõ tào lao, Phố đèn đỏ, Tầng 18, Địa Ngục">
+            </div>
+            <div class="input_userName">
+                <p>Số điện thoại <span>*</span></p>
+                <input type="text" placeholder="0987246112">
+            </div>
+            <button>LƯU</button>
         </div>
     </div>
     <header>
@@ -212,13 +279,13 @@
                         <h1>CHI TIẾT ĐĂNG NHẬP</h1>
                         <h3>EMAIL</h3>
                         <p>dodanghoana12016@gmail.com</p>
-                        <p class="edit_imformation_user">CHỈNH SỬA</p>
+                        <p class="edit_imformation_user" id="edit_imformation_user_1">CHỈNH SỬA</p>
                         <h3>MẬT KHẨU</h3>
                         <p>*************</p>
-                        <p class="edit_imformation_user">CHỈNH SỬA</p>
+                        <p class="edit_imformation_user" id="edit_imformation_user_2">CHỈNH SỬA</p>
                         <h3>SỐ ĐIỆN THOẠI</h3>
                         <p>********365</p>
-                        <p class="edit_imformation_user">CHỈNH SỬA</p>
+                        <p class="edit_imformation_user" id="edit_imformation_user_3">CHỈNH SỬA</p>
                     </div>
                 </div>
                 <div class="content_right_address_user">
