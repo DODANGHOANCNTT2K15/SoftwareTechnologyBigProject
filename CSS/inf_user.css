@@ -309,7 +309,7 @@ main{
         }
             .change_imf_cover{
                 width: 50vw;
-                height: 70vh;
+                height: 100vh;
                 background-color: rgb(255, 255, 255);
                 border: 2px solid black;
                 position: relative; 
@@ -384,7 +384,7 @@ main{
         }
             .change_Email_user .change_Email_cover{
                 width: 50vw;
-                height: 40vh;
+                height: 100vh;
                 background-color: rgb(255, 255, 255);
                 border: 2px solid black;
                 position: relative;
@@ -428,7 +428,7 @@ main{
         }
             .change_Passwork_imf>.change_Passwork_cover{
                 width: 50vw;
-                height: 50vh;
+                height: 100vh;
                 background-color: rgb(255, 255, 255);
                 border: 2px solid black;
                 position: relative;
@@ -472,7 +472,7 @@ main{
         }
             .change_Phone_imf>.change_Phone_cover{
                 width: 50vw;
-                height: 40vh;
+                height: 100vh;
                 background-color: rgb(255, 255, 255);
                 border: 2px solid black;
                 position: relative;
@@ -516,7 +516,7 @@ main{
         }
             .add_address_user>.add_address_user_cover{
                 width: 50vw;
-                height: 75vh;
+                height: 100vh;
                 background-color: rgb(255, 255, 255);
                 border: 2px solid black;
                 position: relative;
