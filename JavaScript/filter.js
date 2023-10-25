@@ -17,7 +17,6 @@ data.forEach(function(item) {
     item.addEventListener("click", function() {
         console.log(this.textContent);
         if(this.textContent == "Limited Edition"){
-            console.log("Con lac");
             var product_ID = document.querySelectorAll(".product_content_item")
 
             product_ID.forEach(function(item){
@@ -150,6 +149,17 @@ data.forEach(function(item) {
                     item.style.display = "none";
                 }
             });
+        }else if(this.textContent == "Unisex"){
+            var product_ID = document.querySelectorAll(".product_content_item")
+
+            product_ID.forEach(function(item){
+                if(item.id.charAt(4) == 'U') {
+                    item.style.display = "block";
+                }
+                if(item.id.charAt(4) != 'U'){
+                    item.style.display = "none";
+                }
+            });
         }else if(this.textContent == "500K - 599K"){
             var product_ID = document.querySelectorAll(".product_content_item .product_content_item_inf p:last-child");
         
@@ -196,4 +206,38 @@ data.forEach(function(item) {
             });
         }
     })
+});
+
+// Nam nữ 
+
+var sex = document.querySelectorAll(".main_category_1 li h1");
+
+sex.forEach(function(item) {
+    item.addEventListener("click", function() {
+        console.log(this.textContent);
+        if(this.textContent == "NAM"){
+            var product_ID = document.querySelectorAll(".product_content_item")
+
+            product_ID.forEach(function(item){
+                if(item.id.charAt(4) == 'M') {
+                    item.style.display =  "block";
+                }
+                if(item.id.charAt(4) != 'M'){
+                    item.style.display = "none";
+                }
+            });
+
+        }else if(this.textContent == "NỮ"){
+            var product_ID = document.querySelectorAll(".product_content_item")
+
+            product_ID.forEach(function(item){
+                if(item.id.charAt(4) == 'N') {
+                    item.style.display =  "block";
+                }
+                if(item.id.charAt(4) != 'N'){
+                    item.style.display = "none";
+                }
+            });
+        }
+    });
 });

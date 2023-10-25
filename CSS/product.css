@@ -262,14 +262,14 @@ main{
                 padding: 0px;
                 margin: 0px;
             }
-            .main_category_1 a{
+            .main_category_1 h1{
                 padding: 0px 20px;
                 border-right: 2px solid rgba(255, 255, 255, 0.471);
             }
-            .main_category_1 li:first-child a{
+            .main_category_1 li:first-child h1{
                 padding-left: 0px;
             }
-            .main_category_1 li:last-child a{
+            .main_category_1 li:last-child h1{
                 border: none;
             }
         .main_content{
