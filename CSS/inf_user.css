@@ -240,6 +240,10 @@ main{
             .content_left_category_title:hover{
                 background-color: orangered;
             }
+            .content_left_category_title a{
+                text-decoration: none;
+                color: white;
+            }
         .content_right{
             width: 70%;
             position: relative;
