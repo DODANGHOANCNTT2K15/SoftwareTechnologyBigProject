@@ -225,11 +225,12 @@ main{
             text-decoration: none;
             color: #ffffff;
         }
-        .main_category a:hover{
+        .main_category li:hover{
             color: orangered;
         }
         .main_category li{
             list-style: none;
+            cursor: pointer;
         }
             .main_category_{
                 /* background-color: antiquewhite; */
@@ -246,12 +247,15 @@ main{
                 .main_category_text_title li{
                     padding: 15px 0px;
                 }
-                .main_category_text_title li a{
+                .main_category_text_title li{
                     opacity: 0.5 ;
                     font-size: 25px;
                 }
-                .main_category_text_title li a:hover{
+                .main_category_text_title li:hover{
                     opacity: 1;
+                }
+                .orangeText{
+                    color: orangered;
                 }
             .main_category_1 ul{
                 display: flex;
