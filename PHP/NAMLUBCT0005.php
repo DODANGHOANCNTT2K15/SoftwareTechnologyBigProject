@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/inside_product.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/NALTUBCV00001.css" type="text/css"> <!-- CSS riêng cho sản phẩm  --> 
+    <link rel="stylesheet" href="../CSS/NAMLUBCT00001.css" type="text/css"> <!-- CSS riêng cho sản phẩm  -->
+    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css"> 
 </head>
 <body>
     <?php
@@ -170,31 +171,28 @@
         <div class="content content_1">
             <div class="content_left">
                 <div class="content_left_img_main">
-                    <img src="../Picture/Product/NALTUBCV00001/_01_green.jpeg" id="mainImage">
+                    <img src="../Picture/Product/NAMLUBCT00001/_01_black.jpeg" id="mainImage">
                 </div>
                 <div class="content_left_img_main_second">
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_01_green.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg1"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_02_green.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg2"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_03_green.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg3"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00001/_04_green.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg4"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_01_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg1"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_02_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg2"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_03_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg3"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCT00001/_04_black.jpeg" alt="" onclick="changeMainImage(this)" id="secondImg4"></div>
                 </div>
             </div>            
             <div class="content_right">
                 <div class="content_right_select content_inf_main">
-                    <h1>BATTAS TOMO - LOW TOP - BLARNEY</h1>
-                    <p>Mã sản phẩm : <span>SA00181</span></p>
+                    <h1>PATTAS TOMO - WORKADAY-LOW TOP-REAL TEAL</h1>
+                    <p>Mã sản phẩm : <span>AV00150</span></p>
                     <p>Tình trạng : <span>New Arrival</span></p>
-                    <p>720.000 VND</p>
+                    <p>580.000 VND</p>
                 </div>
                 <div class="content_right_select content_color">
                     <!--Các button chọn màu-->
                     <div class="color color_1">
-                        <button onclick="color_green()"></button>
+                        <button onclick="color_black()"></button>
                     </div>
                     <div class="color color_2">
-                        <button onclick="color_yellow()"></button>
-                    </div>
-                    <div class="color color_3">
                         <button onclick="color_white()"></button>
                     </div>
                 </div>
@@ -430,6 +428,6 @@
         </div>
     </footer>
     <script src="../JavaScript/inside_product.js"></script>
-    <script src="../JavaScript/NALTUBCV00001.js"></script> <!--JavsScript riêng cho sản phẩm-->
+    <script src="../JavaScript/NAMLUBCT00001.js"></script> <!--JavsScript riêng cho sản phẩm-->
 </body>
 </html>

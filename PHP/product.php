@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/product.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css">
 </head>
 
 <body>

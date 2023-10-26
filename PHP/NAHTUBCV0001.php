@@ -11,7 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/inside_product.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/NALTUBCV00003.css" type="text/css"> <!-- CSS riêng cho sản phẩm  -->
+    <link rel="stylesheet" href="../CSS/NAHTUBCV00001.css" type="text/css"> <!-- CSS riêng cho sản phẩm  -->
+    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css">
 </head>
 
 <body>
@@ -174,33 +175,33 @@
         <div class="content content_1">
             <div class="content_left">
                 <div class="content_left_img_main">
-                    <img src="../Picture/Product/NALTUBCV00003/_01_ghi.jpg" id="mainImage">
+                    <img src="../Picture/Product/NAHTUBCV00001/_01_white.jpg" id="mainImage">
                 </div>
                 <div class="content_left_img_main_second">
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_01_ghi.jpg" alt=""
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_01_white.jpg" alt=""
                             onclick="changeMainImage(this)" id="secondImg1"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_02_ghi.jpg" alt=""
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_02_white.jpg" alt=""
                             onclick="changeMainImage(this)" id="secondImg2"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_03_ghi.jpg" alt=""
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_03_white.jpg" alt=""
                             onclick="changeMainImage(this)" id="secondImg3"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_04_ghi.jpg" alt=""
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_04_white.jpg" alt=""
                             onclick="changeMainImage(this)" id="secondImg4"></div>
                 </div>
             </div>
             <div class="content_right">
                 <div class="content_right_select content_inf_main">
-                    <h1>PBASAS RAW - HIGH TOP - RUSTIC</h1>
-                    <p>Mã sản phẩm : <span>AV00136</span></p>
+                    <h1>BASAS BUMPER GUM EXT NE - HIGH TOP - OFFWHITE/GUM</h1>
+                    <p>Mã sản phẩm : <span>AV00115</span></p>
                     <p>Tình trạng : <span>New Arrival</span></p>
-                    <p>610.000 VND</p>
+                    <p>650.000 VND</p>
                 </div>
                 <div class="content_right_select content_color">
                     <!--Các button chọn màu-->
                     <div class="color color_1">
-                        <button onclick="color_ghi()"></button>
+                        <button onclick="color_white()"></button>
                     </div>
                     <div class="color color_2">
-                        <button onclick="color_ghi()"></button>
+                        <button onclick="color_white()"></button>
                     </div>
                 </div>
                 <div class="content_right_select">
@@ -437,7 +438,7 @@
         </div>
     </footer>
     <script src="../JavaScript/inside_product.js"></script>
-    <script src="../JavaScript/NALTUBCV00003.js"></script> <!--JavsScript riêng cho sản phẩm-->
+    <script src="../JavaScript/NAHTUBCV00001.js"></script> <!--JavsScript riêng cho sản phẩm-->
 </body>
 
 </html>

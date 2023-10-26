@@ -214,7 +214,7 @@
                     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <label for="emailLogin">Email đăng nhập: </label>
                     <input type="text" id="emailLogin" placeholder="Email" name="emailLogin">
-                    <br><span class="erorr"><?php echo $emailLoginErr;?></span>
+                    <br><span class="error"><?php echo $emailLoginErr;?></span><br>
 
                     <label for="userName">Mật khẩu: </label>
                     <input type="text" id="passwordLogin" placeholder="Mật khẩu" name="passwordLogin">

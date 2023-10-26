@@ -11,7 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/inside_product.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/NAHTUBCV00001.css" type="text/css"> <!-- CSS riêng cho sản phẩm  -->
+    <link rel="stylesheet" href="../CSS/NAMLUBCV00001.css" type="text/css"> <!-- CSS riêng cho sản phẩm  -->
+    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css">
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li class="dropdown">
+                <li><a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li><li class="dropdown">
                     <?php
                     if (isset($_SESSION["emailLogin"])) {
                         // Nếu người dùng đã đăng nhập, hiển thị tên của họ
@@ -49,8 +50,7 @@
                         echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
                     }
                     ?>
-                </li>
-                <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
+                </li><li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
@@ -174,32 +174,35 @@
         <div class="content content_1">
             <div class="content_left">
                 <div class="content_left_img_main">
-                    <img src="../Picture/Product/NAHTUBCV00001/_01_white.jpg" id="mainImage">
+                    <img src="../Picture/Product/NAMLUBCV00001/_02_yellow.jpeg" id="mainImage">
                 </div>
                 <div class="content_left_img_main_second">
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_01_white.jpg" alt=""
-                            onclick="changeMainImage(this)" id="secondImg1"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_02_white.jpg" alt=""
-                            onclick="changeMainImage(this)" id="secondImg2"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_03_white.jpg" alt=""
-                            onclick="changeMainImage(this)" id="secondImg3"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NAHTUBCV00001/_04_white.jpg" alt=""
-                            onclick="changeMainImage(this)" id="secondImg4"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCV00001/_01_yellow.jpeg"
+                            alt="" onclick="changeMainImage(this)" id="secondImg1"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCV00001/_02_yellow.jpeg"
+                            alt="" onclick="changeMainImage(this)" id="secondImg2"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCV00001/_03_yellow.jpeg"
+                            alt="" onclick="changeMainImage(this)" id="secondImg3"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NAMLUBCV00001/_04_yellow.jpeg"
+                            alt="" onclick="changeMainImage(this)" id="secondImg4"></div>
                 </div>
             </div>
             <div class="content_right">
                 <div class="content_right_select content_inf_main">
-                    <h1>BASAS BUMPER GUM EXT NE - HIGH TOP - OFFWHITE/GUM</h1>
-                    <p>Mã sản phẩm : <span>AV00115</span></p>
+                    <h1>PATTAS TOMO - LOW TOP - BLARNEY</h1>
+                    <p>Mã sản phẩm : <span>SA00181</span></p>
                     <p>Tình trạng : <span>New Arrival</span></p>
-                    <p>650.000 VND</p>
+                    <p>720.000 VND</p>
                 </div>
                 <div class="content_right_select content_color">
                     <!--Các button chọn màu-->
                     <div class="color color_1">
-                        <button onclick="color_white()"></button>
+                        <button onclick="color_green()"></button>
                     </div>
                     <div class="color color_2">
+                        <button onclick="color_yellow()"></button>
+                    </div>
+                    <div class="color color_3">
                         <button onclick="color_white()"></button>
                     </div>
                 </div>
@@ -437,7 +440,7 @@
         </div>
     </footer>
     <script src="../JavaScript/inside_product.js"></script>
-    <script src="../JavaScript/NAHTUBCV00001.js"></script> <!--JavsScript riêng cho sản phẩm-->
+    <script src="../JavaScript/NAMLUBCV00001.js"></script> <!--JavsScript riêng cho sản phẩm-->
 </body>
 
 </html>

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footsteps In Fashion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../CSS/inside_product.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/NALTUBCV00002.css" type="text/css"> <!-- CSS riêng cho sản phẩm  --> 
+    <link rel="stylesheet" href="../CSS/NALTUBCV00003.css" type="text/css"> <!-- CSS riêng cho sản phẩm  -->
+    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css">
 </head>
+
 <body>
     <?php
          session_start();
@@ -21,7 +26,7 @@
     </div>
     <div class="cart_static">
         <p>0</p>
-        <a href="cart.php">
+        <a href="">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
     </div>
@@ -46,7 +51,7 @@
                     }
                     ?>
                 </li>
-                <li><a href="cart.php"><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
+                <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
@@ -150,9 +155,9 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="about_me.php">
-                        <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
-                    </a></li>
+                    <li><a href="">
+                            <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
+                        </a></li>
                 </ul>
             </div>
             <div class="header_searchBox">
@@ -170,29 +175,33 @@
         <div class="content content_1">
             <div class="content_left">
                 <div class="content_left_img_main">
-                    <img src="../Picture/Product/NALTUBCV00002/_01_blue.jpg" id="mainImage">
+                    <img src="../Picture/Product/NALTUBCV00003/_01_ghi.jpg" id="mainImage">
                 </div>
                 <div class="content_left_img_main_second">
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00002/_01_blue.jpg" alt="" onclick="changeMainImage(this)" id="secondImg1"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00002/_02_blue.jpg" alt="" onclick="changeMainImage(this)" id="secondImg2"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00002/_03_blue.jpg" alt="" onclick="changeMainImage(this)" id="secondImg3"></div>
-                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00002/_04_blue.jpg" alt="" onclick="changeMainImage(this)" id="secondImg4"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_01_ghi.jpg" alt=""
+                            onclick="changeMainImage(this)" id="secondImg1"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_02_ghi.jpg" alt=""
+                            onclick="changeMainImage(this)" id="secondImg2"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_03_ghi.jpg" alt=""
+                            onclick="changeMainImage(this)" id="secondImg3"></div>
+                    <div class="content_left_img_cover"><img src="../Picture/Product/NALTUBCV00003/_04_ghi.jpg" alt=""
+                            onclick="changeMainImage(this)" id="secondImg4"></div>
                 </div>
-            </div>            
+            </div>
             <div class="content_right">
                 <div class="content_right_select content_inf_main">
-                    <h1>BATTAS TOMO - WORKADAY-LOW TOP-REAL TEAL</h1>
-                    <p>Mã sản phẩm : <span>AV00150</span></p>
+                    <h1>PBASAS RAW - HIGH TOP - RUSTIC</h1>
+                    <p>Mã sản phẩm : <span>AV00136</span></p>
                     <p>Tình trạng : <span>New Arrival</span></p>
-                    <p>580.000 VND</p>
+                    <p>610.000 VND</p>
                 </div>
                 <div class="content_right_select content_color">
                     <!--Các button chọn màu-->
                     <div class="color color_1">
-                        <button onclick="color_blue()"></button>
+                        <button onclick="color_ghi()"></button>
                     </div>
                     <div class="color color_2">
-                        <button onclick="color_black()"></button>
+                        <button onclick="color_ghi()"></button>
                     </div>
                 </div>
                 <div class="content_right_select">
@@ -250,10 +259,12 @@
                     <h1>QUY ĐỔI SẢN PHẨM</h1>
                     <ul>
                         <li>Chỉ đổi hàng 1 lần duy nhất, mong bạn cân nhắc kĩ trước khi quyết định.</li>
-                        <li>Thời hạn đổi sản phẩm khi mua trực tiếp tại cửa hàng là 07 ngày, kể từ ngày mua. Đổi sản phẩm khi mua online là 14 ngày, kể từ ngày nhận hàng.</li>
+                        <li>Thời hạn đổi sản phẩm khi mua trực tiếp tại cửa hàng là 07 ngày, kể từ ngày mua. Đổi sản
+                            phẩm khi mua online là 14 ngày, kể từ ngày nhận hàng.</li>
                         <li>Sản phẩm đổi phải kèm hóa đơn. Bắt buộc phải còn nguyên tem, hộp, nhãn mác.</li>
                         <li>Sản phẩm đổi không có dấu hiệu đã qua sử dụng, không giặt tẩy, bám bẩn, biến dạng.</li>
-                        <li>Trong trường hợp sản phẩm - size bạn muốn đổi không còn hàng trong hệ thống. Vui lòng chọn sản phẩm khác.</li>
+                        <li>Trong trường hợp sản phẩm - size bạn muốn đổi không còn hàng trong hệ thống. Vui lòng chọn
+                            sản phẩm khác.</li>
                         <li>Không hoàn trả bằng tiền mặt dù bất cứ trong trường hợp nào. Mong bạn thông cảm.</li>
                     </ul>
                 </div>
@@ -427,6 +438,7 @@
         </div>
     </footer>
     <script src="../JavaScript/inside_product.js"></script>
-    <script src="../JavaScript/NALTUBCV00002.js"></script> <!--JavsScript riêng cho sản phẩm-->
+    <script src="../JavaScript/NALTUBCV00003.js"></script> <!--JavsScript riêng cho sản phẩm-->
 </body>
+
 </html>
