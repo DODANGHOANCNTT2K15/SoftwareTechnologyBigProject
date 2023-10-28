@@ -1,0 +1,673 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+    color: white;
+    background-color: rgb(20, 20, 20);
+}
+
+header{
+    width: 100%;
+}
+    .header_1{
+        width: 100%;
+        height: 30px;
+        background-color: rgb(59, 59, 59);
+        display: flex;
+        justify-content: end;
+    }
+        .header_1 ul{
+            display: flex;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .header_1 ul li{
+            list-style: none;
+            display: flex;
+            align-content: center;
+            padding: 0px 15px;
+        }
+
+        .header_1 ul li a{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .header_1 ul li img{
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .header_1 a:hover{
+            color: orangered;
+        }
+    .header_2{
+        width: 100%;
+        height: 120px;
+        background-color: rgb(0, 0, 0);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+    }   
+        .header_2 a:hover{
+            color: orangered;
+        }
+        .header_logo{
+            height: 100%;
+        }
+            .header_logo img{
+                height: 100%;
+            }
+        .header_category{
+            display: flex;
+            /* background-color: bisque; */
+        }
+            .header_category ul{
+                display: flex;
+            }
+            .header_category ul li{
+                list-style: none;
+                display: flex;
+                align-items: end;
+            }
+            .header_category ul li a{
+                text-decoration: none;
+                font-size: 30px;
+                font-weight: bold;
+                color: white;
+                padding: 0px 40px;
+                border-right: 2px solid rgba(255, 255, 255, 0.451);
+            }
+            .header_category ul li:last-child a{
+                border: none;
+            }
+            .header_category img{
+                height: 120px;
+                transform: translateY(22px);
+            }
+            .header_category ul li a:hover +.header_hover_product_category{
+                transform: scaleY(1);
+            }
+            .header_hover_product_category{
+                position: absolute;
+                background-color: rgb(53, 53, 53);
+                width: 100%;
+                height: 550px;
+                top: 150px;
+                left: 0px;
+                transform: scaleY(0);
+                transition: 0.5s;
+                transform-origin: top;
+                z-index: 100;
+            }
+            .header_hover_product_category:hover{
+                transform: scaleY(1);
+            }
+                .header_hover_product_category{
+                    display: flex;
+                    justify-content: space-around;
+                }
+                .category_product_hover .img_category_product{
+                    width: 350px;
+                    height: 350px;
+                    overflow: hidden;
+                }
+                .category_product_hover h1{
+                    text-align: center;
+                }
+                .category_product_hover .img_category_product img{
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.5;
+                }  
+                    .category_product_hover .img_category_product img:hover{
+                        opacity: 1;
+                    }
+                .category_product_hover a{
+                    border: none !important;
+                }
+        .header_hover_product_male{
+            display: flex;
+            height: 300px;
+            padding: 40px 100px;
+            box-sizing: border-box;
+        }
+            .product_male_header{
+                /* background-color: aqua; */
+                width: 400px;
+            }
+            .header_hover_product_male .product_male_header:first-child{
+                border-right: 4px dashed rgba(255, 255, 255, 0.401);
+            }
+            .product_male_header ul{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                padding: 0px;
+            }
+            .product_male_header h1{
+                margin: 30px 0px;
+            }
+            .product_male_header ul li {
+                list-style: none;
+                padding: 10px 10px;
+            }
+            .product_male_header ul li a{
+                border: none;
+                opacity: 0.8;
+                font-weight: lighter;
+                font-size: 25px;
+            }
+            .product_male_header ul li a:hover{
+                color: orangered;
+            }
+        .header_searchBox{
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+            .search_box{
+                position: relative;
+            }
+            .search_box img{
+                height: 20px;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            .search_box input{
+                height: 35px;
+                width: 220px;
+                padding-left: 40px;
+                background: transparent;
+                border: 2px solid white;
+                color: white;
+            }
+
+    .header_3{
+        width: 100%;
+        height: 50px;
+        background-color: rgb(37, 37, 37);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        .header_3 p{
+            margin: 0px;
+            padding: 0px;
+            opacity: 0.5;
+            font-size: 15px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+    
+main{
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    flex-wrap: wrap;
+}
+    .content{
+        width: 80%;
+        /* background-color: rgb(37, 38, 39); */
+    }
+        .content_left{
+            width: 30%;
+            /* background-color: antiquewhite; */
+            justify-content: center;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+            .content_left_category{
+                width: 90%;
+                flex-wrap: wrap;
+                background-color: rgb(0, 0, 0);
+            }
+            .content_left_category_title{
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                padding-left: 30px;
+                font-size: 1.5rem;
+            }
+            .content_left_category_title:hover{
+                background-color: orangered;
+            }
+            .content_left_category_title a{
+                text-decoration: none;
+                color: white;
+            }
+        .content_right{
+            width: 70%;
+            position: relative;
+            padding-left: 50px;
+            background-color: black;
+        }
+            .content_right_information_user{
+                display: none;
+            }
+            .informtion_user_{
+                margin-bottom: 100px;
+            }
+                .informtion_user_ h1{
+                    font-size: 3rem;
+                }
+                .informtion_user_ p{
+                    font-size: 1.2rem;
+                }
+                    .informtion_user_ h3{
+                        margin-top: 50px;
+                    }
+                .edit_imformation_user{
+                    text-decoration: underline;
+                    cursor: pointer;
+                    font-size: 1.3rem;
+                    color: orangered;
+                }
+            .content_right_address_user{
+                /* background-color: aqua; */
+                padding-top: 20px;
+            }
+                .address_user{
+                    width: 100%;
+                    /* background-color: antiquewhite; */
+                    margin: 50px auto;
+                    display: flex;
+                    justify-content: space-around;
+                }
+                    .address{
+                        width: 45%;
+                        height: 300px;
+                        /* background-color: aquamarine; */
+                        padding: 20px;
+                        box-sizing: border-box;
+                        border: 2px solid white;
+                    }
+                        .address h1{
+                            margin: 0px;
+                        }
+                        .edit_address_button{
+                            text-decoration: underline;
+                            color: orangered;
+                        }
+                    .address_add{
+                        font-size: 2rem;
+                    }
+        .change_information_user{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(38, 38, 38, 0.674);
+            position: fixed;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .change_imf_cover{
+                width: 50vw;
+                height: 100vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative; 
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .exit_change_imf{
+                    width: 70px;
+                    height: 70px;
+                    background-color: rgb(255, 85, 0);
+                    position: absolute;
+                    top: 10px;
+                    right: 2vw;
+                    border: 2px solid black;
+                    color: rgb(255, 255, 255);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 3rem;
+                }
+                .change_imf_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                }
+                    .input_sex{
+                        width: 20px !important;
+                        height: 20px !important;
+                        margin: 0px;
+                    }
+                    .input_sex_cover{
+                        align-items: baseline;
+                    }
+                    .input_sex_cover label{
+                        font-size: 1.6rem;
+                        margin: 0px 15px;
+                    }
+                .Born_user{
+                    justify-content: space-between;
+                }
+                .Born_user .input_userName{
+                    width: 30%;
+                }
+                .change_imf_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+        .change_Email_user{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .change_Email_user .change_Email_cover{
+                width: 50vw;
+                height: 100vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .change_Email_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+                .change_Email_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 50px;
+                }
+        .change_Passwork_imf{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .change_Passwork_imf>.change_Passwork_cover{
+                width: 50vw;
+                height: 100vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .change_Passwork_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+                .change_Passwork_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                }
+        .change_Phone_imf{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .change_Phone_imf>.change_Phone_cover{
+                width: 50vw;
+                height: 100vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .change_Phone_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                }
+                .change_Phone_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+        .add_address_user{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(38, 38, 38, 0.674);
+            width: 100vw;
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+            .add_address_user>.add_address_user_cover{
+                width: 50vw;
+                height: 100vh;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid black;
+                position: relative;
+                padding: 50px;
+                box-sizing: border-box;
+                color: black;
+                cursor: pointer;
+            }
+                .add_address_user_cover input{
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                }
+                .add_address_user_cover button{
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px;
+                    box-sizing: border-box;
+                    background-color: orangered;
+                    color: white;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    padding-left: 50px;
+                    cursor: pointer;
+                }
+footer{
+    /* background-color: aquamarine; */
+    height: fit-content;
+    width: 100%;
+    background-color: rgb(71, 71, 71);
+    margin-top: 100px;
+}
+
+    .footer_1{
+        /* background-color: rgb(71, 71, 71); */
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+    }
+        .location_shop{
+            /* background-color: aqua; */
+            width: 20%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+            .location_shop img{
+                width: 100%;
+            }
+            .location_shop button{
+                background-color: orangered;
+                color: white;
+                width: 250px;
+                height: 40px;
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+        .footer_content{
+            /* background-color: aquamarine; */
+            width: 80%;
+            box-sizing: border-box;
+        }
+            .footer_content img{
+                width: 40px;
+            }
+            .footer_content_1{
+                display: flex;
+                /* background-color: bisque; */
+                justify-content: space-between;
+                margin-top: 65px;
+                box-sizing: border-box;
+            }
+                .footer_content_item{
+                    margin-right: 20px;
+                }
+                .footer_content_item li{
+                    font-size: 25px;
+                }
+                .footer_content_item ul{
+                    padding: 0px;
+                }
+                .footer_content_item ul li{
+                    list-style: none;
+                    padding: 5px 0px;
+                }
+                .footer_content_item ul li a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 25px;
+                }
+                .footer_content_item ul li a:hover{
+                    color: orangered;
+                }
+            .footer_content_2{
+                display: flex;
+                justify-content: space-between;
+                /* background-color: brown; */
+            }
+                .footer_content_item_Social .link_social img{
+                    width: 50px;
+                    margin-right: 20px;
+                }
+                .footer_content_item_email_input input{
+                    background-color: black;
+                    border: 2px solid white;
+                    color: white;
+                    width: 250px;
+                    height: 40px;
+                    box-sizing: border-box;
+                    padding: 0px 20px;
+                }
+                .footer_content_item_email_input button{
+                    width: 60px;
+                    height: 40px;
+                    border: 2px solid rgb(254, 97, 0);
+                    background-color: rgb(255, 89, 0);
+                }
+                .footer_content_item_email_input img{
+                    height: 100%;
+                }
+                    .email_input{
+                        display: flex;
+                        align-items: center;
+                    }
+                .footer_content_logo_text img{
+                    width: 250px;
+                    margin-right: 150px;
+                }
+    .footer_2{
+        /* background-color: antiquewhite; */
+        display: flex;
+        justify-content: space-around;
+        overflow: hidden;
+        align-items: center;
+        height: 200px;
+    }
+        .footer_2 img{
+            height: 300px;
+        }
+        .footer_2 p{
+            font-size: 30px;
+        }
+
+.flexbox{
+    display: flex;
+}
