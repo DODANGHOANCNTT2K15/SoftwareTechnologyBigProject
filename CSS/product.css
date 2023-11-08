@@ -127,7 +127,7 @@ header{
                     .category_product_hover .img_category_product img:hover{
                         opacity: 1;
                     }
-                .category_product_hover a{
+                .category_product_hover {
                     border: none !important;
                 }
         .header_hover_product_male{

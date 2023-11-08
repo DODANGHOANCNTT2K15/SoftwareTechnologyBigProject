@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
 <?php
@@ -33,7 +33,7 @@
 
         // Kiểm tra emailLogin và mật khẩu trong cơ sở dữ liệu
         $query = "SELECT user_id FROM user WHERE email = ? AND password = ?";
-        $stmt = $conn->prepare($query);
+        $stmt = $connect->prepare($query);
         $stmt->bind_param("ss", $emailLogin, $passwordLogin);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -70,7 +70,7 @@
       Your browser does not support the video tag.
     </video>
     <div class="top-nav">
-      <a href="/Home-Page/home-page.html"><img src="../Picture/Icon/Icon_logo.png" alt="Logo"><h2>Ananas</h2></a>
+      <a href="../PHP/product.php"><img src="../Picture/Icon/Icon_logo.png" alt="Logo"></a>
   </div>
     <div class="login-box">
         <h2>Đăng nhập</h2>
@@ -85,7 +85,7 @@
             <span class="error"><?php echo $passwordLoginErr;?></span>
             <label>Mật khẩu</label>
           </div>
-          <div class="login-button" id="login_button">
+          <button id="login_button" type="submit">
             <a href="#">
               <span></span>
               <span></span>
@@ -93,7 +93,7 @@
               <span></span>
               Đăng nhập
             </a>
-          </div>
+          </button>
           <a href="#">
             Quên mật khẩu ?
           </a>

@@ -21,7 +21,7 @@
     </div>
     <div class="cart_static">
         <p>0</p>
-        <a href="">
+        <a href="../PHP/cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
     </div>
@@ -46,7 +46,7 @@
                     }
                     ?>
                 </li>>
-                <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
+                <li><a href="../PHP/cart.php"><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">

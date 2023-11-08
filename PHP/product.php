@@ -16,16 +16,25 @@
 
 <body>
     <?php
-         session_start();
+        session_start();
+        require_once 'ConnectData.php';
+        $user_id = $_SESSION["user_id"]; 
+
+        if ($connect->connect_error) {
+            die('Kết nối không thành công: ' . $connect->connect_error);
+        }
+        function formatPrice($price) {
+            return number_format($price, 0, '.');
+        }
     ?>
     <div class="contract_static">
-        <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
+        <a href="https://www.facebook.com/profile.php?id=100090857135846"><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
         <a href=""><img src="../Picture/Icon/Icon_youtube.png" alt=""></a>
         <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
     </div>
     <div class="cart_static">
-        <p>0</p>
-        <a href="">
+        <p id="cart-item"></p>
+        <a href="../PHP/cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
     </div>
@@ -50,7 +59,7 @@
                     }
                     ?>
                 </li>
-                <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
+                <li><a href="../PHP/cart.php"><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
@@ -189,266 +198,109 @@
                 <div class="main_category_2 main_category_ main_category_text_title">
                     <h1>TRẠNG THÁI</h1>
                     <ul>
-                        <li><a href="">Limited Edition</a></li>
-                        <li><a href="">Online Only</a></li>
-                        <li><a href="">Sale off</a></li>
-                        <li><a href="">New Arrival</a></li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Limited Edition" id="product_state">Limited Edition</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Online Only" id="product_state">Online Only</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Sale off" id="product_state">Sale off</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="New Arrival" id="product_state">New Arrival</li>
                     </ul>
                 </div>
                 <div class="main_category_3 main_category_ main_category_text_title">
                     <h1>KIỂU DÁNG</h1>
                     <ul>
-                        <li><a href="">Low Top</a></li>
-                        <li><a href="">High Top</a></li>
-                        <li><a href="">Mid Top</a></li>
-                        <li><a href="">Mule</a></li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="LT" id="product_design">Low Top</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="HT" id="product_design">High Top</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Mid Top" id="product_design">Mid Top</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="ML" id="product_design">Mule</li>
                     </ul>
                 </div>
                 <div class="main_category_4 main_category_ main_category_text_title">
                     <h1>DÒNG SẢN PHẨM</h1>
                     <ul>
-                        <li><a href="">Batas</a></li>
-                        <li><a href="">Urbas</a></li>
-                        <li><a href="">Vintas</a></li>
-                        <li><a href="">Pattas</a></li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="B" id="product_type">Batas</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="B" id="product_type">Batas</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="V" id="product_type">Vintas</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="P" id="product_type">Pattas</li>
                     </ul>
                 </div>
                 <div class="main_category_5 main_category_ main_category_text_title">
                     <h1>GIÁ</h1>
                     <ul>
-                        <li><a href="">
-                                < 200K</a>
-                        </li>
-                        <li><a href="">200K - 299K</a></li>
-                        <li><a href="">300K - 399K</a></li>
-                        <li><a href="">400K - 499K</a></li>
-                        <li><a href="">> 500K</a></li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="200" id="product_price">200</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="> 200" id="product_price">> 200</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="> 300" id="product_price">> 300</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="> 400" id="product_price">> 400</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="> 500" id="product_price">> 500</li>
                     </ul>
                 </div>
                 <div class="main_category_6 main_category_ main_category_text_title">
                     <h1>CHẤT LIỆU</h1>
                     <ul>
-                        <li><a href="">Canvas</a></li>
-                        <li><a href="">Cottons</a></li>
-                        <li><a href="">Acrylic</a></li>
-                        <li><a href="">Da</a></li>
-                        <li><a href="">Da lộn</a></li>
-                        <li><a href="">Polyester</a></li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Canvas" id="product_material">Canvas</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Cottons" id="product_material">Cottons</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Acrylic" id="product_material">Acrylic</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Da" id="product_material">Da</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Da lộn" id="product_material">Da lộn</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Polyester" id="product_material">Polyester</li>
                     </ul>
                 </div>
                 <div class="main_category_7 main_category_ main_category_text_title">
                     <h1>MÀU SẮC</h1>
+                    <ul>
+                        <li><input type="checkbox" class="form-check-input product-check" value="blue" id="product_color">Blue</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="yellow" id="product_color">Yellow</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="red" id="product_color">Red</li>
+                    </ul>
                 </div>
             </div>
             <div class="main_content">
-                <div class="main_banner">
-                    <img src="../Picture/Img/Img_bannner_product.jpg" alt="">
-                </div>
-                <div class="main_product_content">
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/NALTUBCV00001.php"><img src="../Picture/Img_shoes/Img_shoes_02 .jpeg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>720.000 VND</p>
-                        </div>
+    <div class="main_banner">
+        <img src="../Picture/Img/Img_bannner_product.jpg" alt="">
+    </div>
+    <div class="main_product_content">
+        <?php
+        $sql = "SELECT p.product_id,
+                    p.product_sex,
+                    p.product_state,
+                    p.product_design,
+                    p.product_type,
+                    p.product_image,
+                    p.product_price,
+                    p.product_material,
+                    p.product_color,
+                    p.product_description,
+                    p.product_link
+                    FROM products p";
+        $result = $connect->query($sql);
+        $rows = $result->num_rows;
+        ?>
+        <div class="show-result main_product_content" id="result">
+            <?php
+            if ($rows > 0) {
+                while ($data = $result->fetch_assoc()) {
+            ?>
+                <div class='product_content_item'>
+                    <div class='product_content_item_img'>
+                        <a href='../PHP/<?php echo htmlspecialchars($data['product_link']); ?>'><img src='../Picture/Product/<?php echo htmlspecialchars($data['product_image']); ?>'></a>
                     </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/NALTUBCV00002.php"><img src="../Picture/Img_shoes/Img_shoes_03.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Workaday - Low Top</a></h2>
-                            <p>Real Teal</p>
-                            <p>580.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/NAMLUBCT00001.php"><img
-                                    src="../Picture/Product/NAMLUBCT00001/_02_white.jpeg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Mid Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/NAHTUBCV00001.php"><img
-                                    src="../Picture/Product/NAHTUBCV00001/_02_white.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Basas Bumper Gum EXT NE - High Top</a></h2>
-                            <p>Offwhite/Gum</p>
-                            <p>650.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/NALTUBCV00003.php"><img
-                                    src="../Picture/Product/NALTUBCV00003/_02_ghi.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Basas RAW - Low Top</a></h2>
-                            <p>Rustic</p>
-                            <p>610.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/NAMLUBCV00001.php"><img
-                                    src="../Picture/Product/NAMLUBCV00001/_02_yellow.jpeg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top - High Top - Mid Top</a></h2>
-                            <p>Blarney</p>
-                            <p>720.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="product_content_item">
-                        <div class="product_content_item_img">
-                            <a href="../PHP/inside_product.php"><img src="../Picture/Img_shoes/Img_shoes_1.jpg"></a>
-                        </div>
-                        <div class="product_content_item_inf">
-                            <p>New Arrival</p>
-                            <h2><a href="">Pattas Tomo - Low Top</a></h2>
-                            <p>Blarney</p>
-                            <p>760.000 VND</p>
-                        </div>
+                    <div class='product_content_item_inf'>
+                        <p><?php echo htmlspecialchars($data['product_state']); ?></p>
+                        <h2><a href='../PHP/<?php echo htmlspecialchars($data['product_link']); ?>'><?php echo htmlspecialchars($data['product_description']); ?></a></h2>
+                        <p><?php echo htmlspecialchars($data['product_color']); ?></p>
+                        <p><?php $formattedPrice = formatPrice($data['product_price']);
+                            echo htmlspecialchars($formattedPrice);
+                            ?> VND</p>
                     </div>
                 </div>
-            </div>
+            <?php
+                }
+            } else {
+                echo "<div><ol start='1'><li>Check your spelling</li><li>Try using common names like jeans, t shirt</li></ol></div>";
+            }
+            ?>
+        </div>
+    </div>
+    </div>
+
         </div>
     </main>
     <footer>
@@ -527,6 +379,12 @@
             <p>Copyright © 2023 Footsteps In Fashion. All rights reserved.</p>
         </div>
     </footer>
+    <?php $connect->close();?>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+    <script src="../JavaScript/index.js"></script>
+    <script src="../JavaScript/filter.js"></script>
 </body>
 
 </html>

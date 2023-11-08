@@ -12,7 +12,12 @@
 </head>
 <body>
     <?php
-         session_start();
+        session_start();
+        require_once 'ConnectData.php';
+        $user_id = $_SESSION["user_id"];
+        if ($connect->connect_error) {
+            die('Kết nối không thành công: ' . $connect->connect_error);
+        }
     ?>
     <div class="contract_static">
         <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
@@ -20,8 +25,25 @@
         <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
     </div>
     <div class="cart_static">
-        <p>0</p>
-        <a href="">
+    <p><?php 
+            $query = "SELECT quantity FROM cart WHERE user_id = ?";
+            $stmt = $connect->prepare($query);
+            $stmt->bind_param("i", $user_id);
+            
+            if ($stmt->execute()) {
+                $result = $stmt->get_result();
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $quantity = $row["quantity"];
+                    echo "$quantity";
+                } else {
+                    echo "0";
+                }
+            } else {
+                echo "Lỗi khi truy vấn dữ liệu giỏ hàng: " . $stmt->error;
+            }
+            ?></p>
+        <a href="../PHP/cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
     </div>
@@ -404,5 +426,6 @@
             <p>Copyright © 2023 Footsteps In Fashion. All rights reserved.</p>
         </div>
     </footer>
+    <?php $connect->close();?>
 </body>
 </html>
