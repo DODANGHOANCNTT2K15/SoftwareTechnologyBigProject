@@ -8,10 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/cart.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
     <?php
-         session_start();
+    session_start();
+    require_once 'ConnectData.php';
+    $user_id = $_SESSION["user_id"];  
+    function formatPrice($price) {
+        return number_format($price, 0, '.');
+    }      
     ?>
     <div class="contract_static">
         <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
@@ -19,8 +26,8 @@
         <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
     </div>
     <div class="cart_static">
-        <p>0</p>
-        <a href="cart.PHP">
+        <p id="cart-item"></p>
+        <a href="../PHP/cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
     </div>
@@ -208,75 +215,74 @@
                         <h1>GIỎ HÀNG</h1>
                     </div>
                     <div class="cover_product">
-                        <div class="product">
-                            <div class="product_img">
-                                <img src="../Picture/Product/NAMLUBCT00001/_02_white.jpeg">
+                    <?php
+                        $grand_total = 0;
+                        if ($connect->connect_error) {
+                            die('Kết nối không thành công: ' . $connect->connect_error);
+                        } else {
+                            $sql = "SELECT cart.*, products.*
+                                    FROM cart
+                                    JOIN products ON cart.product_id = products.product_id
+                                    WHERE cart.user_id = ?";
+                            $stmt = $connect->prepare($sql);
+                            $stmt->bind_param("i", $user_id);
+                            $stmt->execute();
+                            $result_2 = $stmt->get_result();
+                        }
+
+                        if ($result_2->num_rows > 0) {
+                        while ($row_2 = $result_2->fetch_assoc()) {
+                            $formattedPrice = formatPrice($row_2["product_price"]);
+                            $fomattedTotalPrice = formatPrice($row_2["total_price"]);
+                            $grand_total += $row_2['total_price'];
+                    ?>
+                    <div class='product'>
+                        <div class='product_img'>
+                            <a href="../PHP/<?php echo $row_2["product_link"];?>"><img src='../Picture/Product/<?php echo $row_2["product_image"]; ?>'></a>
+                        </div>
+                        <div class='product_imf'>
+                        <h1><?php echo $row_2["product_description"]; ?></h1>
+                        <p><?php echo $formattedPrice; ?> VND</p>
+
+                        <form action="" class="form-submit">
+                        <input type="hidden" class="pid" value="<?= $row_2['product_id'] ?>">
+                        <input type="hidden" class="pprice" value="<?= $row_2['product_price'] ?>">
+                        <div class='select'>
+                            <div class='size'>
+                                <h1>SIZE</h1>
+                                <select>
+                                    <option selected value="M">M</option>
+                                </select>
                             </div>
-                            <div class="product_imf">
-                                <h1>PATTAS TOMO - LOW TOP - BLARNEY</h1>
-                                <p>Giá: 220.000 VND</p>
-                                <div class="select">
-                                    <div class="size">
-                                        <h1>SIZE</h1>
-                                        <select>
-                                            <option selected value="M">M</option>
-                                        </select>
-                                    </div>
-                                    <div class="size">
-                                        <h1>Số lượng</h1>
-                                        <select>
-                                            <option selected value="1">1</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="delect">
-                                <h1>220.000VND</h1>
-                                <p>Còn hàng</p>
-                                <button type="button">
-                                    <img src="../Picture/Icon/Icon_heart_2.png" > 
-                                </button>
-                                <button type="button">
-                                    <img src="../Picture/Icon/Icon_THUNGRAC.png" >
-                                </button>
+                            <div class='quantity'>
+                                <h1>Số lượng</h1>
+                                <input type="number" class="qty" value="<?= $row_2['quantity'] ?>">
                             </div>
                         </div>
-                        <div class="product">
-                            <div class="product_img">
-                                <img src="../Picture/Product/NAMLUBCT00001/_02_white.jpeg">
-                            </div>
-                            <div class="product_imf">
-                                <h1>PATTAS TOMO - LOW TOP - BLARNEY</h1>
-                                <p>Giá: 220.000 VND</p>
-                                <div class="select">
-                                    <div class="size">
-                                        <h1>SIZE</h1>
-                                        <select>
-                                            <option selected value="M">M</option>
-                                        </select>
-                                    </div>
-                                    <div class="size">
-                                        <h1>Số lượng</h1>
-                                        <select>
-                                            <option selected value="1">1</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="delect">
-                                <h1>220.000VND</h1>
-                                <p>Còn hàng</p>
-                                <button type="button">
-                                    <img src="../Picture/Icon/Icon_heart_2.png" > 
-                                </button>
-                                <button type="button">
-                                    <img src="../Picture/Icon/Icon_THUNGRAC.png" >
-                                </button>
-                            </div>
+                        </form>
+
                         </div>
+                        <div class='delect'>
+                        <h1><?php echo $fomattedTotalPrice; ?> VND</h1>
+                        <p>Còn hàng</p>
+                         <button type='button' onclick="removeFromCart(<?php echo $row_2['product_id']; ?>)">
+                            <img src="../Picture/Icon/Icon_heart_2.png" > 
+                        </button>
+                        <button type='button'>
+                        <a href="cart_action.php?remove=<?= $row_2['product_id'] ?>" class="lead" onclick="return confirm('Are you sure want to remove this item?');">
+                        <img src="../Picture/Icon/Icon_THUNGRAC.png" ></a>
+                        </button>
+                        </div>
+                    </div> 
+                    <?php
+                            }
+                        } else {
+                            echo "<p style=\"font-size: 25px\">Hãy chọn cho mình những đôi giày thật ưng ý !!</p>";
+                        }
+                    ?>
                     </div>
                     <div class="back">
-                        <button type="button">XÓA HẾT</button>
+                        <a href="cart_action.php?clear=all" onclick="return confirm('Bạn muốn xóa hết giỏ hàng?');">XÓA HẾT</a>
                         <div class="back_home">
                             <a href="product.PHP">QUAY LẠI MUA HÀNG</a>
                         </div>
@@ -299,14 +305,26 @@
                             <p>Giảm</p>
                         </div>
                         <div class="component_safe">
-                            <p>940.000 VND</p>
+                            <p><?php
+                                if (isset($grand_total)) {
+                                    echo formatPrice($grand_total);
+                                } else {
+                                    echo 0;
+                                }
+                                ?> VND</p>
                             <p>0 VND</p>
                         </div>
                     </div>
                     <div class="total_payment">
                         <div class="title_total">
                             <h2>TẠM TÍNH</h2>
-                            <h2>940.000 VND</h2>
+                            <h2><?php
+                                if (isset($grand_total)) {
+                                    echo formatPrice($grand_total);
+                                } else {
+                                    echo 0;
+                                }
+                                ?> VND</h2>
                         </div>
                         <div class="payment">
                             <a href="pay.PHP">TIẾP TỤC THANH TOÁN</a>
@@ -392,5 +410,47 @@
             <p>Copyright © 2023 Footsteps In Fashion. All rights reserved.</p>
         </div>
     </footer>
+    <?php $connect->close();?>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        // Change the item quantity
+        $(".qty").on('change', function() {
+            var $form = $(this).closest('.form-submit');
+            var pid = $form.find(".pid").val();
+            var pprice = $form.find(".pprice").val();
+            var qty = $form.find(".qty").val();
+
+            $.ajax({
+                url: 'cart_action.php',
+                method: 'post',
+                data: {
+                    qty: qty,
+                    pid: pid,
+                    pprice: pprice,
+                },
+                success: function(response) {
+                    location.reload(true);
+                }
+            });
+        });
+
+        load_cart_item_number();
+        // Load total no.of items added in the cart and display in the navbar
+        function load_cart_item_number() {
+            $.ajax({
+            url: 'cart_action.php',
+            method: 'get',
+            data: {
+                cartItem: "cart_item"
+            },
+            success: function(response) {
+            $("#cart-item").html(response);
+            }
+            });
+        }
+        });
+    </script>
 </body>
 </html>

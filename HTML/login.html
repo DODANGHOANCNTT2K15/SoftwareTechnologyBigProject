@@ -11,217 +11,51 @@
     <link rel="stylesheet" href="../CSS/login.css" type="text/css">
 </head>
 <body>
-    <header>
-        <div class="header_1">
-            <ul>
-                <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
-                <li><a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Phenikaa/@20.9626112,105.7486864,17z/data=!3m1!4b1!4m6!3m5!1s0x313452efff394ce3:0x391a39d4325be464!8m2!3d20.9626112!4d105.7486864!16s%2Fg%2F1220whsz?entry=ttu"><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
-                <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li><a href="login.html"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a></li>
-                <li><a href="cart.html"><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
-            </ul>
-        </div>
-        <div class="header_2">
-            <div class="header_logo">
-                <a href="index.html"><img src="../Picture/Icon/Icon_logo.png"></a>
+    <video id="video-background" autoplay loop muted>
+        <source src="../Video/videoFirst.mp4" type="video/mp4">
+    </video>
+    <div class="top-nav">
+        <a href="../PHP/product.php"><img src="../Picture/Icon/Icon_logo.png" alt="Logo"></a>
+    </div>
+      <div class="login-box">
+          <h2>Đăng nhập</h2>
+          <!-- <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"> -->
+            <form action="">
+            <div class="user-box">
+              <input type="text" name="emailLogin" required="" id="emailLogin">
+              <!-- <span class="error"><?php echo $emailLoginErr;?></span> -->
+              <label>Tên đăng nhập</label>
             </div>
-            <div class="header_category">
-                <ul>
-                    <li>
-                        <a href="product.html">SẢN PHẨM</a>
-                        <div class="header_hover_product_category">
-                            <div class="category_product_hover">
-                                <a href="">
-                                    <div class="img_category_product">
-                                        <img src="../Picture/Img/Img_header_category_1.jpg">
-                                    </div>
-                                    <h1>CHO NAM</h1>
-                                </a>
-                            </div>
-                            <div class="category_product_hover">
-                                <a href="">
-                                    <div class="img_category_product">
-                                        <img src="../Picture/Img/Img_header_category_2.jpg">
-                                    </div>
-                                    <h1>CHO NỮ</h1>
-                                </a>
-                            </div>
-                            <div class="category_product_hover">
-                                <a href="SaleOff.html">
-                                    <div class="img_category_product">
-                                        <img src="../Picture/Img/Img_banner_safeOf.jpg">
-                                    </div>
-                                    <h1>SALE OF</h1>
-                                </a>
-                            </div>
-                            <div class="category_product_hover">
-                                <a href="">
-                                    <div class="img_category_product">
-                                        <img src="../Picture/Img/Img_header_category_1.jpg">
-                                    </div>
-                                    <h1>BÁN CHẠY</h1>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product_Nam.html">NAM</a>
-                        <!-- <div class="header_hover_product_category header_hover_product_male">
-                            <div class="product_male_header">
-                                <h1>NỔI BẬT</h1>
-                                <ul>
-                                    <li><a href="">Best seller</a></li>
-                                    <li><a href="">New Arrivals</a></li>
-                                    <li><a href="">Sale off</a></li>
-                                </ul>
-                            </div>
-                            <div class="product_male_header">
-                                <h1>STYLE</h1>
-                                <ul>
-                                    <li><a href="">Hight top</a></li>
-                                    <li><a href="">Low top</a></li>
-                                    <li><a href="">Slip-on</a></li>
-                                </ul>
-                            </div>
-                            <div class="product_male_header">
-                                <h1>DÒNG SẢN PHẨM</h1>
-                                <ul>
-                                    <li><a href="">Best seller</a></li>
-                                    <li><a href="">New Arrivals</a></li>
-                                    <li><a href="">Sale off</a></li>
-                                </ul>
-                            </div>
-                        </div> -->
-                    </li>
-                    <li>
-                        <a href="product_Nu.html">NỮ</a>
-                        <!-- <div class="header_hover_product_category header_hover_product_male">
-                            <div class="product_male_header">
-                                <h1>NỔI BẬT</h1>
-                                <ul>
-                                    <li><a href="">Best seller</a></li>
-                                    <li><a href="">New Arrivals</a></li>
-                                    <li><a href="">Sale off</a></li>
-                                </ul>
-                            </div>
-                            <div class="product_male_header">
-                                <h1>STYLE</h1>
-                                <ul>
-                                    <li><a href="">Hight top</a></li>
-                                    <li><a href="">Low top</a></li>
-                                    <li><a href="">Slip-on</a></li>
-                                </ul>
-                            </div>
-                            <div class="product_male_header">
-                                <h1>DÒNG SẢN PHẨM</h1>
-                                <ul>
-                                    <li><a href="">Best seller</a></li>
-                                    <li><a href="">New Arrivals</a></li>
-                                    <li><a href="">Sale off</a></li>
-                                </ul>
-                            </div>
-                        </div> -->
-                    </li>
-                    <li><a href="about_me.html">
-                        <img src="../Picture/Icon/Icon_Logo_Type_Text.png">
-                    </a></li>
-                </ul>
+            <div class="user-box">
+              <input type="password" name="passwordLogin" required="" id="passwordLogin">
+              <!-- <span class="error"><?php echo $passwordLoginErr;?></span> -->
+              <label>Mật khẩu</label>
             </div>
-            <div class="header_searchBox">
-                <div class="search_box">
-                    <img src="../Picture/Icon/Icon_Find.png">
-                    <input type="text" placeholder="Tìm kiếm">
-                </div>
+            <button id="login_button" type="submit">
+              <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Đăng nhập
+              </a>
+            </button>
+            <a href="#">
+              Quên mật khẩu ?
+            </a>
+            <div class="or">
+              <div class="line"></div>
+              <div class="text">Hoặc</div>
+              <div class="line"></div>
             </div>
-        </div>
-        <div class="header_3">
-            <p>Khám phá phong cách nằm sâu trong bạn</p>
-        </div>
-    </header>
-    <main>
-        <div class="content">
-            <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
-            <div class="login">
-                <div class="login_cover">
-                    <label for="userName">Tên tài khoản</label>
-                    <input type="text" id="userName" value placeholder="Username">
-                    <label for="userName">Mật khẩu</label>
-                    <input type="text" id="userName" value placeholder="Passwork">
-                    <button type="button" id="login_button">ĐĂNG NHẬP</button>
-                    <p>Bạn chưa là thành viên</p>
-                    <div class="register">
-                        <a href="register.html">ĐĂNG KÝ</a>
-                    </div> 
-                </div>
+            <div class="other-way">
+              <a href="#"><img src="../Picture/Icon/logo-facebook.jpg" alt="">Facebook</a>
+              <a href="#"><img src="../Picture/Icon/logo-google.png" alt="">Google</a>
             </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer_1">
-            <div class="location_shop">
-                <img src="../Picture/Icon/Icon_shop_location.png">
-                <div class="button_findLocation">
-                    <button >TÌM CỬA HÀNG</button>
-                </div>
+            <div class="sign-up">
+              Bạn mới biết Foosteps in Fashion ?<a href="">  Đăng ký</a>
             </div>
-            <div class="footer_content">
-                <div class="footer_content_1">
-                    <div class="footer_content_item">
-                        <h1>SẢN PHẨM</h1>
-                        <ul>
-                            <li><a href="product_Nam.html">Giày Nam</a></li>
-                            <li><a href="product_Nu.html">Giày Nữ</a></li>
-                            <li><a href="SaleOff.html">Sale-off</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer_content_item">
-                        <h1>HỖ TRỢ</h1>
-                        <ul>
-                            <li><a href="">FAQs</a></li>
-                            <li><a href="">Bảo mật thông tin</a></li>
-                            <li><a href="">Chính sách chung</a></li>
-                            <li><a href="">Tra cứu đơn hàng</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer_content_item">
-                        <h1>LIÊN HỆ</h1>
-                        <ul>
-                            <li>Email góp ý</li>
-                            <li>21010666@st.phenikaa-uni.edu.vn</li>
-                            <li>Hotline</li>
-                            <li>098349372</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer_content_2">
-                    <div class="footer_content_item_Social">
-                        <h1>FOOTSTEPS IN FASHION SOCIAL</h1>
-                        <div class="link_social">
-                            <a href="https://www.facebook.com/Ananas.vietnam/"><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
-                            <a href="https://www.youtube.com/discoveryou"><img src="../Picture/Icon/Icon_youtube.png" alt=""></a>
-                            <a href="https://www.instagram.com/ananasvn/"><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="footer_content_item_email_input">
-                        <h1>ĐĂNG KÝ NHẬN EMAIL</h1>
-                        <div class="email_input">
-                            <input type="text" placeholder="EMAIL">
-                            <button>
-                                <img src="../Picture/Icon/IconMuiTen.png">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="footer_content_logo_text">
-                        <img src="../Picture/Icon/Icon_Logo_Type_Text.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer_2">
-            <img src="../Picture/Img/Img_ThongbaoBoCongThuong.png">
-            <p>Copyright © 2023 Footsteps In Fashion. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="../JavaScript/FindShop.js"></script>
+          </form>
+      </div>
 </body>
 </html>

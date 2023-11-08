@@ -1,389 +1,174 @@
-body{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'League Spartan', sans-serif;
-    color: white;
-    background-color: rgb(20, 20, 20);
 }
 
-header{
+html {
+    height: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#ff6200, #ff4000);
+  }
+  
+  .top-nav img {
+    height: 70px;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+
+  #video-background {
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+  .login-box {
+    position: absolute;
+    top: 55%;
+    left: 80%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(249, 244, 244, 0.905);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #070707;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
     width: 100%;
-}
-    .header_1{
-        width: 100%;
-        height: 30px;
-        background-color: rgb(59, 59, 59);
-        display: flex;
-        justify-content: end;
-    }
-        .header_1 ul{
-            display: flex;
-            padding: 0px;
-            margin: 0px;
-        }
+    padding: 10px 0;
+    font-size: 16px;
+    color: #070707;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #070707;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #070707;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label
+   {
+    top: -20px;
+    left: 0;
+    color: #070707;
+    font-size: 12px;
+  }
+  
+  #login_button {
+    padding: 8px 30px;
+    margin-right: 40px;
+    color: black;
+  }
 
-        .header_1 ul li{
-            list-style: none;
-            display: flex;
-            align-content: center;
-            padding: 0px 15px;
-        }
+  .line {
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+    text-align: center;
+  }
 
-        .header_1 ul li a{
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .header_1 ul li img{
-            height: 20px;
-            margin-right: 10px;
-        }
-        
-        .header_1 a:hover{
-            color: orangered;
-        }
-    .header_2{
-        width: 100%;
-        height: 120px;
-        background-color: rgb(0, 0, 0);
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-around;
-    }   
-        .header_2 a:hover{
-            color: orangered;
-        }
-        .header_logo{
-            height: 100%;
-        }
-            .header_logo img{
-                height: 100%;
-            }
-        .header_category{
-            display: flex;
-            /* background-color: bisque; */
-        }
-            .header_category ul{
-                display: flex;
-            }
-            .header_category ul li{
-                list-style: none;
-                display: flex;
-                align-items: end;
-            }
-            .header_category ul li a{
-                text-decoration: none;
-                font-size: 30px;
-                font-weight: bold;
-                color: white;
-                padding: 0px 40px;
-                border-right: 2px solid rgba(255, 255, 255, 0.451);
-            }
-            .header_category ul li:last-child a{
-                border: none;
-            }
-            .header_category img{
-                height: 120px;
-                transform: translateY(22px);
-            }
-            .header_category ul li a:hover +.header_hover_product_category{
-                transform: scaleY(1);
-            }
-            .header_hover_product_category{
-                position: absolute;
-                background-color: rgb(53, 53, 53);
-                width: 100%;
-                height: 550px;
-                top: 150px;
-                left: 0px;
-                transform: scaleY(0);
-                transition: 0.5s;
-                transform-origin: top;
-                z-index: 100;
-            }
-            .header_hover_product_category:hover{
-                transform: scaleY(1);
-            }
-                .header_hover_product_category{
-                    display: flex;
-                    justify-content: space-around;
-                }
-                .category_product_hover .img_category_product{
-                    width: 350px;
-                    height: 350px;
-                    overflow: hidden;
-                }
-                .category_product_hover h1{
-                    text-align: center;
-                }
-                .category_product_hover .img_category_product img{
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0.5;
-                }  
-                    .category_product_hover .img_category_product img:hover{
-                        opacity: 1;
-                    }
-                .category_product_hover a{
-                    border: none !important;
-                }
-        .header_hover_product_male{
-            display: flex;
-            height: 300px;
-            padding: 40px 100px;
-            box-sizing: border-box;
-        }
-            .product_male_header{
-                /* background-color: aqua; */
-                width: 400px;
-            }
-            .header_hover_product_male .product_male_header:first-child{
-                border-right: 4px dashed rgba(255, 255, 255, 0.401);
-            }
-            .product_male_header ul{
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: column;
-                padding: 0px;
-            }
-            .product_male_header h1{
-                margin: 30px 0px;
-            }
-            .product_male_header ul li {
-                list-style: none;
-                padding: 10px 10px;
-            }
-            .product_male_header ul li a{
-                border: none;
-                opacity: 0.8;
-                font-weight: lighter;
-                font-size: 25px;
-            }
-            .product_male_header ul li a:hover{
-                color: orangered;
-            }
-        .header_searchBox{
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-            .search_box{
-                position: relative;
-            }
-            .search_box img{
-                height: 20px;
-                position: absolute;
-                top: 10px;
-                left: 10px;
-            }
-            .search_box input{
-                height: 35px;
-                width: 220px;
-                padding-left: 40px;
-                background: transparent;
-                border: 2px solid white;
-                color: white;
-            }
-
-    .header_3{
-        width: 100%;
-        height: 50px;
-        background-color: rgb(37, 37, 37);
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-        .header_3 p{
-            margin: 0px;
-            padding: 0px;
-            opacity: 0.5;
-            font-size: 15px;
-            letter-spacing: 10px;
-            text-transform: uppercase;
-        }
-    
-main{
-    background-color: rgb(20, 20, 20);
+  .or {
+    padding-bottom: 14px;
     display: flex;
-    justify-content: center;
-    padding-top: 50px;
-    flex-wrap: wrap;
-}
-    .content {
-        width: 90%;
-        /* background-color: red; */
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-        .content h1{
-            width: 100%;
-            text-align: center;
-        }
-        .login input{
-            width: 100%;
-            height: 40px;
-            color: white;
-            background-color: rgb(53, 53, 53);
-            padding: 20px;
-            box-sizing: border-box;
-            margin: 15px 0px;
-        }
-        .login button{
-            width: 100%;
-            background-color: orangered;
-            color: white;
-            font-size: 20px;
-            padding: 10px 0px;
-            margin: 10px 0px;
-        }
-        .register{
-            width: 100%;
-            background-color: orangered;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .register a{
-            background-color: orangered;
-            color: white;
-            font-size: 25px;
-            text-decoration: none;
-        }
-        .login p{
-            padding: 20px 0px;
-            padding-bottom: 0px;
-            font-size: 20px;
-            border-top: 2px solid white;
-        }
-        
+    margin-top: 15px;
+  }
 
-    
-footer{
-    /* background-color: aquamarine; */
-    height: fit-content;
-    width: 100%;
-    background-color: rgb(71, 71, 71);
-    margin-top: 100px;
-}
+  .or .text {
+    padding: 0 16px;
+    text-transform: uppercase;
+  }
+  
 
-    .footer_1{
-        /* background-color: rgb(71, 71, 71); */
-        width: 100%;
-        display: flex;
-        box-sizing: border-box;
-    }
-        .location_shop{
-            /* background-color: aqua; */
-            width: 20%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-            .location_shop img{
-                width: 100%;
-            }
-            .location_shop button{
-                background-color: orangered;
-                color: white;
-                width: 250px;
-                height: 40px;
-                font-size: 25px;
-                font-weight: bold;
-            }
+  .other-way img {
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin-right: 15px;
+  }
 
-        .footer_content{
-            /* background-color: aquamarine; */
-            width: 80%;
-            box-sizing: border-box;
-        }
-            .footer_content img{
-                width: 40px;
-            }
-            .footer_content_1{
-                display: flex;
-                /* background-color: bisque; */
-                justify-content: space-between;
-                margin-top: 65px;
-                box-sizing: border-box;
-            }
-                .footer_content_item{
-                    margin-right: 20px;
-                }
-                .footer_content_item li{
-                    font-size: 25px;
-                }
-                .footer_content_item ul{
-                    padding: 0px;
-                }
-                .footer_content_item ul li{
-                    list-style: none;
-                    padding: 5px 0px;
-                }
-                .footer_content_item ul li a{
-                    text-decoration: none;
-                    color: white;
-                    font-size: 25px;
-                }
-                .footer_content_item ul li a:hover{
-                    color: orangered;
-                }
-            .footer_content_2{
-                display: flex;
-                justify-content: space-between;
-                /* background-color: brown; */
-            }
-                .footer_content_item_Social .link_social img{
-                    width: 50px;
-                    margin-right: 20px;
-                }
-                .footer_content_item_email_input input{
-                    background-color: black;
-                    border: 2px solid white;
-                    color: white;
-                    width: 250px;
-                    height: 40px;
-                    box-sizing: border-box;
-                    padding: 0px 20px;
-                }
-                .footer_content_item_email_input button{
-                    width: 60px;
-                    height: 40px;
-                    border: 2px solid rgb(254, 97, 0);
-                    background-color: rgb(255, 89, 0);
-                }
-                .footer_content_item_email_input img{
-                    height: 100%;
-                }
-                    .email_input{
-                        display: flex;
-                        align-items: center;
-                    }
-                .footer_content_logo_text img{
-                    width: 250px;
-                    margin-right: 150px;
-                }
-    .footer_2{
-        /* background-color: antiquewhite; */
-        display: flex;
-        justify-content: space-around;
-        overflow: hidden;
-        align-items: center;
-        height: 200px;
-    }
-        .footer_2 img{
-            height: 300px;
-        }
-        .footer_2 p{
-            font-size: 30px;
-        }
+  .other-way {
+    display: flex;
+    justify-content: space-between;
+  }
 
+  .other-way a {
+    display: block;
+    padding: 10px;
+    border: 1px solid gray;
+    color: black;
+    width: 130px;
+  }
+
+  .other-way a:hover {
+    border: 1px solid #ff6200;
+    color:#ff6200;
+  }
+
+  .sign-up {
+    color: gray;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .sign-up a {
+    color:#ff6200;
+    font-size: 20px;
+  }
+
+  .sign-up a:hover {
+    text-shadow: 5px 5px 5px #ff6200;
+  }
+
+  form a {
+    color: gray;
+  }
+
+  form a:hover {
+    color:#ff6200;
+  }
 
 .error {
-    color: red;
+  color: red;
+}
+
+.top-nav img {
+    height: 100%;
 }

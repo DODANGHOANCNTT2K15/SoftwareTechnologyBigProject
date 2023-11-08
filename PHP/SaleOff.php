@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/SaleOff.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css">
 </head>
 <body>
     <?php
@@ -20,7 +21,7 @@
     </div>
     <div class="cart_static">
         <p>0</p>
-        <a href="">
+        <a href="../PHP/cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
     </div>
@@ -45,7 +46,7 @@
                     }
                     ?>
                 </li>>
-                <li><a href=""><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
+                <li><a href="../PHP/cart.php"><img src="../Picture/Icon/Icon_Cart.png" alt="">Giỏ hàng</a></li>
             </ul>
         </div>
         <div class="header_2">
