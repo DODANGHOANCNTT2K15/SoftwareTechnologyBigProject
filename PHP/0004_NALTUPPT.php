@@ -60,11 +60,7 @@
                     <?php
                     if (isset($_SESSION["emailLogin"])) {
                         // Nếu người dùng đã đăng nhập, hiển thị tên của họ
-                        echo '<a href="profile.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
-                        echo '<div class="dropdown-content">
-                                <a href="edit_profile.php">Chỉnh sửa thông tin cá nhân</a>
-                                <a href="logout.php">Đăng xuất</a>
-                            </div>';
+                        echo '<a href="inf_user.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
                     } else {
                         // Nếu người dùng chưa đăng nhập, hiển thị "Đăng nhập"
                         echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';

@@ -11,18 +11,13 @@
         href="https://fonts.googleapis.com/css2?family=Knewave&family=League+Spartan:wght@600;700&family=Montserrat:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/product.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/dropAccount.css" type="text/css">
 </head>
 
 <body>
     <?php
         session_start();
         require_once 'ConnectData.php';
-        $user_id = $_SESSION["user_id"]; 
-
-        if ($connect->connect_error) {
-            die('Kết nối không thành công: ' . $connect->connect_error);
-        }
+        $user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : NULL; 
         function formatPrice($price) {
             return number_format($price, 0, '.');
         }
@@ -48,11 +43,7 @@
                     <?php
                     if (isset($_SESSION["emailLogin"])) {
                         // Nếu người dùng đã đăng nhập, hiển thị tên của họ
-                        echo '<a href="profile.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
-                        echo '<div class="dropdown-content">
-                                <a href="edit_profile.php">Chỉnh sửa thông tin cá nhân</a>
-                                <a href="logout.php">Đăng xuất</a>
-                            </div>';
+                        echo '<a href="inf_user.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
                     } else {
                         // Nếu người dùng chưa đăng nhập, hiển thị "Đăng nhập"
                         echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
