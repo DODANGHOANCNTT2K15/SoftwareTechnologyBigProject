@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'League Spartan', sans-serif;
+}
+
+video{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.flexbox{
+    display: flex;
+}
+
+.content{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 30;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+    .logo{
+        width: 30%;
+    }
+    .form{
+        width: 350px;
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 5px 10px 10px;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        padding: 20px;
+        transition: 1s;
+    }
+    .cover_login_signup{
+        height: 250px;
+        overflow: hidden;
+        transition: 1s;
+    }
+        .login{
+            transition: 1s;
+        }
+        .signup{
+            transition: 1s;
+        }
+        .changeLogin{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            user-select: none;
+        }
+            #change_ID{
+                color: orangered;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        .input_login{
+            flex-wrap: wrap;
+        }
+            .input_login input{
+                width: 100%;
+                margin: 10px 0px;
+                height: 40px;
+                border: none;
+                border-bottom: 2px solid rgb(230, 75, 19);
+                transition: 0.5s;
+            }
+            .input_login input:focus{
+                outline: none;
+            }
+        .cover_button_login{
+            width: 100%;
+            justify-content: center;
+        }
+            .cover_button_login button{
+                margin-top: 20px;
+                width: 50%;
+                height: 30px;
+                color: white;
+                background-color: orangered;
+                font-weight: bold;
+                transition: 1s;
+            }
