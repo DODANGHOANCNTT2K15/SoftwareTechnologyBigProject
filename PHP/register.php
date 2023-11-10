@@ -13,8 +13,6 @@
 <?php
     // Yêu cầu kết nối với database
     require_once 'ConnectData.php';
-
-    $emailErr = $phoneNumberErr = $passWordErr = $fullNameErr = "";
     $email = $phoneNumber = $passWord = $fullName = "";
 
     // Kiểm tra các trường dữ liệu

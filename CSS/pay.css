@@ -241,8 +241,18 @@ main{
             .left_bottom label{
                 font-size: 1.4rem;
             }
-            .left_bottom input, label{
-                margin: 20px;
+            .left_bottom select{
+                width: 80%;
+                height: 40px;
+                margin: 20px 0px;
+                color: white;
+                background-color: transparent;
+                border: 2px solid white;
+                padding: 5px 20px;
+                font-size: 1.3rem;
+            }
+            .left_bottom select option {
+                color: black
             }
             
         .right{

@@ -1,18 +1,3 @@
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("slide");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  slides[slideIndex-1].style.display = "block";  
-  setTimeout(showSlides, 6000);
-}
-
 // Thay đổi ảnh review
 function changeMainImage(clickedImage) {
   var newImageSrc = clickedImage.src;
@@ -214,3 +199,21 @@ carousel_2.addEventListener("mousemove", dragging_2);
 document.addEventListener("mouseup", dragStop_2);
 carousel_2.addEventListener("scroll", infiniteScroll_2);
 
+document.getElementById("pay-button").addEventListener("click", function() {
+  window.location.href = "cart.php";
+});
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 6000);
+}

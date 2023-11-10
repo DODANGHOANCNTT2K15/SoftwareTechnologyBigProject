@@ -164,8 +164,19 @@
                 </div>
             </div>
         </div>
-        <div class="header_3">
-            <p>Khám phá phong cách nằm sâu trong bạn</p>
+        <div class="slideshow-container">
+            <div class="slide">
+              <p>Free SHIPPING với hóa đơn từ 900.000</p>
+            </div>
+            <div class="slide">
+              <p>Buy More pay less - Áp dụng khi mua phụ kiện</p>
+            </div>
+            <div class="slide">
+              <p>hàng 2 tuần nhận đổi - Giày bảo hành nửa năm</p>
+            </div>
+            <div class="slide">
+              <p>Buy 2 get 10 % off - Áp dụng với tất cả basis tee</p>
+            </div>
         </div>
     </header>
     <main>
@@ -178,28 +189,28 @@
                     <div class="left_top_add_product">
                         <div class="add_product">
                             <div class="add_product_left">
-                                <a href=""><img src="../Picture/Product/NAMLUBCT00001/_01_black.jpeg"></a>
+                                <a href="0025_NAHTNUCV.php"><img src="../Picture/Product/0025_NAHTNUCV/0025_NAHTNUCV_02.jpg"></a>
                             </div>
                             <div class="add_product_right">
-                                <a href="">PATTAS TOMO - LOW TOP - BLARNEY</a>
+                                <a href="">URBAS SC - HIGH TOP - CORNSILK</a>
                                 <div class="add_product_right_p">
                                     <p>Yellow</p>
                                     <p>New Arrivals</p>
-                                    <p>500.000 VND</p>
+                                    <p>650.000 VND</p>
                                 </div>
                                 <button type="button">THÊM</button>
                             </div>
                         </div>
                         <div class="add_product">
                             <div class="add_product_left">
-                                <a href=""><img src="../Picture/Product/NAMLUBCT00001/_01_black.jpeg"></a>
+                                <a href="0023_NAMLNUCV.php"><img src="../Picture/Product/0023_NAMLNUCV/0023_NAMLNUCV_02.jpg"></a>
                             </div>
                             <div class="add_product_right">
-                                <a href="">PATTAS TOMO - LOW TOP - BLARNEY</a>
+                                <a href="">URBAS SC - MULE - CORNSILK</a>
                                 <div class="add_product_right_p">
                                     <p>Yellow</p>
                                     <p>New Arrivals</p>
-                                    <p>500.000 VND</p>
+                                    <p>580.000 VND</p>
                                 </div>
                                 <button type="button">THÊM</button>
                             </div>
@@ -448,5 +459,6 @@
         }
         });
     </script>
+    <script src="../JavaScript/index.js"></script>
 </body>
 </html>

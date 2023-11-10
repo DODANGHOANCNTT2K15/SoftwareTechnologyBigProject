@@ -166,8 +166,19 @@
                 </div>
             </div>
         </div>
-        <div class="header_3">
-            <p>Khám phá phong cách nằm sâu trong bạn</p>
+        <div class="slideshow-container">
+            <div class="slide">
+              <p>Free SHIPPING với hóa đơn từ 900.000</p>
+            </div>
+            <div class="slide">
+              <p>Buy More pay less - Áp dụng khi mua phụ kiện</p>
+            </div>
+            <div class="slide">
+              <p>hàng 2 tuần nhận đổi - Giày bảo hành nửa năm</p>
+            </div>
+            <div class="slide">
+              <p>Buy 2 get 10 % off - Áp dụng với tất cả basis tee</p>
+            </div>
         </div>
     </header>
     <main>
@@ -200,7 +211,6 @@
                     <ul>
                         <li><input type="checkbox" class="form-check-input product-check" value="LT" id="product_design">Low Top</li>
                         <li><input type="checkbox" class="form-check-input product-check" value="HT" id="product_design">High Top</li>
-                        <li><input type="checkbox" class="form-check-input product-check" value="Mid Top" id="product_design">Mid Top</li>
                         <li><input type="checkbox" class="form-check-input product-check" value="ML" id="product_design">Mule</li>
                     </ul>
                 </div>
@@ -208,9 +218,10 @@
                     <h1>DÒNG SẢN PHẨM</h1>
                     <ul>
                         <li><input type="checkbox" class="form-check-input product-check" value="B" id="product_type">Batas</li>
-                        <li><input type="checkbox" class="form-check-input product-check" value="B" id="product_type">Batas</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="U" id="product_type">Urban</li>
                         <li><input type="checkbox" class="form-check-input product-check" value="V" id="product_type">Vintas</li>
                         <li><input type="checkbox" class="form-check-input product-check" value="P" id="product_type">Pattas</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="T" id="product_type">Track 6</li>
                     </ul>
                 </div>
                 <div class="main_category_5 main_category_ main_category_text_title">
@@ -226,12 +237,11 @@
                 <div class="main_category_6 main_category_ main_category_text_title">
                     <h1>CHẤT LIỆU</h1>
                     <ul>
-                        <li><input type="checkbox" class="form-check-input product-check" value="Canvas" id="product_material">Canvas</li>
-                        <li><input type="checkbox" class="form-check-input product-check" value="Cottons" id="product_material">Cottons</li>
-                        <li><input type="checkbox" class="form-check-input product-check" value="Acrylic" id="product_material">Acrylic</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="CV" id="product_material">Canvas</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="CT" id="product_material">Cottons</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="PT" id="product_material">Polyester</li>
                         <li><input type="checkbox" class="form-check-input product-check" value="Da" id="product_material">Da</li>
-                        <li><input type="checkbox" class="form-check-input product-check" value="Da lộn" id="product_material">Da lộn</li>
-                        <li><input type="checkbox" class="form-check-input product-check" value="Polyester" id="product_material">Polyester</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="AL" id="product_material">Acrylic</li>
                     </ul>
                 </div>
                 <div class="main_category_7 main_category_ main_category_text_title">
@@ -239,7 +249,9 @@
                     <ul>
                         <li><input type="checkbox" class="form-check-input product-check" value="blue" id="product_color">Blue</li>
                         <li><input type="checkbox" class="form-check-input product-check" value="yellow" id="product_color">Yellow</li>
-                        <li><input type="checkbox" class="form-check-input product-check" value="red" id="product_color">Red</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="purple" id="product_color">Purple</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Brown" id="product_color">Brown</li>
+                        <li><input type="checkbox" class="form-check-input product-check" value="Green" id="product_color">Green</li>
                     </ul>
                 </div>
             </div>

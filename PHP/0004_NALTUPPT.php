@@ -18,9 +18,13 @@
         session_start();
         require_once 'ConnectData.php';
         $user_id = $_SESSION["user_id"];
-        if ($connect->connect_error) {
-            die('Kết nối không thành công: ' . $connect->connect_error);
-        }
+        $product_id = 5;
+
+        $sql = "SELECT * FROM cart WHERE user_id = ? AND product_id = ?";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("ii", $user_id, $product_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
     ?>
     <div class="contract_static">
         <a href=""><img src="../Picture/Icon/Icon_Facebook.png" alt=""></a>
@@ -28,24 +32,7 @@
         <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
     </div>
     <div class="cart_static">
-    <p><?php 
-            $query = "SELECT quantity FROM cart WHERE user_id = ?";
-            $stmt = $connect->prepare($query);
-            $stmt->bind_param("i", $user_id);
-            
-            if ($stmt->execute()) {
-                $result = $stmt->get_result();
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    $quantity = $row["quantity"];
-                    echo "$quantity";
-                } else {
-                    echo "0";
-                }
-            } else {
-                echo "Lỗi khi truy vấn dữ liệu giỏ hàng: " . $stmt->error;
-            }
-            ?></p>
+        <p id="cart-item"></p>
         <a href="../PHP/cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
@@ -246,30 +233,30 @@
                     <a href="../PHP/0002_NALTUBCV.php"><button id="btn_color_1"></button></a>
                     <a href="#"><button id="btn_color_2"></button></a>
                 </div>
-                <div class="size_quantity">
-                    <div class="size-control">
-                        <label for="size">SIZE</label><br>
-                        <select id="size" name="size">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                    </div>
-                    <div class="quantity-control">
-                        <label for="quantity">SỐ LƯỢNG</label><br>
-                        <div class="quantity-input">
-                            <button id="decrease">-</button>
-                            <input type="text" id="quantity" name="quantity" value="1">
-                            <button id="increase">+</button><br>
+                <form action="" class="form-submit" onsubmit="<?php echo ($result->num_rows > 0) ? 'return false' : 'return true'; ?>">
+                    <div class="size_quantity">
+                        <div class="size-control">
+                            <label for="size">SIZE</label><br>
+                                <select name="size" class="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="quantity">SỐ LƯỢNG</label><br>
+                            <input type="number" class="quantity" name="quantity" value="1">
                         </div>
                     </div>
-                </div>
-                <div class="add-cart_heart">
-                    <button>THÊM VÀO GIỎ HÀNG</button>
-                    <button><ion-icon name="heart-outline"></ion-icon></button>
-                </div>
-                <button id="pay-button">THANH TOÁN</button>
+                    <input type="hidden" class="product_id" value="5">
+                    <input type="hidden" class="product_price" value="1290000">
+                    <div class="add-cart_heart">
+                        <button type="button" class="addItemBtn"><?php echo ($result->num_rows > 0) ? 'Đã có trong giỏ' : 'Thêm vào giỏ hàng'; ?></button>
+                        <button type="button" id=""><ion-icon name="heart-outline"></ion-icon></button>
+                    </div>
+                    <button class="addItemBtn" id="pay-button">THANH TOÁN</button>
+                </form>
                 <div class="dropdown-detail">
                     <button onclick="function_1()" class="dropbtn dropbtn1">THÔNG TIN SẢN PHẨM</button>
                     <div id="myDropdown1" class="dropdown-content content1">
@@ -301,46 +288,46 @@
             <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel_2">
                 <li class="card_2">
-                    <img src="/Pictures/bag2.jpeg" alt="img" draggable="false">
-                    <a href="">Long Sleeve Graphic Tee-Love, Peace & Music</a>
-                    <div class="color_name">Jet Black</div>
-                    <div class="price">390.000 VND <span></span></div>
+                    <img src="../Picture/Product/0000_NALTMBCV/0000_NALTMBVC_02.jpeg" alt="img" draggable="false">
+                    <a href="0000_NALTMBCV.php">PATTAS TOMO - LOW TOP - BLARNEY</a>
+                    <div class="color_name">GREEN</div>
+                    <div class="price">720.000 VND <span></span></div>
                 </li>
                 <li class="card_2">
-                    <img src="/Pictures/bag2.jpeg" alt="img" draggable="false">
-                    <a href="">Long Sleeve Graphic Tee-Love, Peace & Music</a>
-                    <div class="color_name">Jet Black</div>
-                    <div class="price">390.000 VND <span></span></div>
+                    <img src="../Picture/Product/0001_NAHTUBCV/0001_NAHTUBCV_02.jpg" alt="img" draggable="false">
+                    <a href="0001_NAHTUBCV.php">Basas Bumper Gum EXT NE - High Top</a>
+                    <div class="color_name">WHITE</div>
+                    <div class="price">590.000 VND <span></span></div>
                 </li>
                 <li class="card_2">
-                    <img src="/Pictures/bag2.jpeg" alt="img" draggable="false">
-                    <a href="">Long Sleeve Graphic Tee-Love, Peace & Music</a>
-                    <div class="color_name">Jet Black</div>
-                    <div class="price">390.000 VND <span></span></div>
+                    <img src="../Picture/Product/0002_NALTUBCV/0002_NALTUBCV_02.jpeg" alt="img" draggable="false">
+                    <a href="0002_NALTUBCV.php">Track 6 2.Blues - Low Top</a>
+                    <div class="color_name">BLUE</div>
+                    <div class="price">1.190.000 VND <span></span></div>
                 </li>
                 <li class="card_2">
-                    <img src="/Pictures/bag2.jpeg" alt="img" draggable="false">
-                    <a href="">Long Sleeve Graphic Tee-Love, Peace & Music</a>
-                    <div class="color_name">Jet Black</div>
-                    <div class="price">390.000 VND <span></span></div>
+                    <img src="../Picture/Product/0003_NALTUBCV/0003_NALTUBCV_02.jpeg" alt="img" draggable="false">
+                    <a href="0003_NALTUBCV.php">VINTAS JAZICO - LOW TOP - ROYAL WHITE</a>
+                    <div class="color_name">WHITE</div>
+                    <div class="price">720.000 VND <span></span></div>
                 </li>
                 <li class="card_2">
-                    <img src="/Pictures/bag2.jpeg" alt="img" draggable="false">
-                    <a href="">Long Sleeve Graphic Tee-Love, Peace & Music</a>
-                    <div class="color_name">Jet Black</div>
-                    <div class="price">390.000 VND <span></span></div>
+                    <img src="../Picture/Product/0004_NALTUPPT/0004_NALTUPPT_02.jpeg" alt="img" draggable="false">
+                    <a href="0004_NALTUPPT.php">Track 6 2.Blues - Low Top</a>
+                    <div class="color_name">BLUE</div>
+                    <div class="price">1.290.000 VND <span></span></div>
                 </li>
                 <li class="card_2">
-                    <img src="/Pictures/bag2.jpeg" alt="img" draggable="false">
-                    <a href="">Long Sleeve Graphic Tee-Love, Peace & Music</a>
-                    <div class="color_name">Jet Black</div>
-                    <div class="price">390.000 VND <span></span></div>
+                    <img src="../Picture/Product/0005_NAHTUVCT/0005_NAHTUVCT_02.jpeg" alt="img" draggable="false">
+                    <a href="0005_NAHTUVCT.php">Urbas Corluray Mix - High Top</a>
+                    <div class="color_name">BROWN</div>
+                    <div class="price">650.000 VND <span></span></div>
                 </li>
                 <li class="card_2">
-                    <img src="/Pictures/bag2.jpeg" alt="img" draggable="false">
-                    <a href="">Long Sleeve Graphic Tee-Love, Peace & Music</a>
-                    <div class="color_name">Jet Black</div>
-                    <div class="price">390.000 VND <span></span></div>
+                    <img src="../Picture/Product/0006_NALTUVCT/0006_NALTUVCT_02.jpeg" alt="img" draggable="false">
+                    <a href="0006_NALTUVCT.php">Urbas Corluray Mix -  Low Top</a>
+                    <div class="color_name">BROWN</div>
+                    <div class="price">610.000 VND <span></span></div>
                 </li>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
@@ -423,7 +410,54 @@
             <p>Copyright © 2023 Footsteps In Fashion. All rights reserved.</p>
         </div>
     </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        // Send product details in the server
+        $(".addItemBtn").click(function(e) {
+        e.preventDefault();
+        var $form = $(this).closest(".form-submit");
+        var size = $form.find(".size").val();
+        var quantity = $form.find(".quantity").val();
+        var product_id = $form.find(".product_id").val();
+        var product_price = $form.find(".product_price").val();
+
+        $.ajax({
+            url: 'Cart_action.php',
+            method: 'post',
+            data: {
+                product_id: product_id,
+                product_price: product_price,
+                quantity: quantity,
+                size: size
+            },
+            success: function(response) {
+                location.reload(true);
+                load_cart_item_number();
+            }
+        });
+        });
+        // Load total no.of items added in the cart and display in the navbar
+        load_cart_item_number();
+
+        function load_cart_item_number() {
+            $.ajax({
+            url: 'cart_action.php',
+            method: 'get',
+            data: {
+                cartItem: "cart_item"
+            },
+            success: function(response) {
+            $("#cart-item").html(response);
+            }
+            });
+        }       
+        });
+    </script>
     <script src="../JavaScript/inside_product.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <?php $connect->close();?>
 </body>
 </html>

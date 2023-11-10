@@ -191,8 +191,7 @@ header{
             .slideshow-container {
                 overflow: hidden;
                 width: 100%;
-                background-color: #f2f2f2;
-                color: black;
+                background-color: rgb(37, 37, 37);
               }
               
               .slide {
@@ -285,11 +284,11 @@ main {
             position: absolute;
             top: 50%;
             width: auto;
-            margin-top: -30px;
+            margin-top: -22px;
             padding: 16px;
             color: white;
             font-weight: bold;
-            font-size: 30px;
+            font-size: 20px;
             transition: 0.5s linear;
             border-radius: 0 3px 3px 0;
             user-select: none;
@@ -337,7 +336,7 @@ main {
         .carousel .card {
             scroll-snap-align: start;
             list-style: none;
-            height: 160px;
+            height: 140px;
             background: #fff;
             cursor: pointer;
             border-radius: 15px;
@@ -345,7 +344,7 @@ main {
         
         .card img {
             width: 100%;
-            height: 160px;
+            height: auto;
             object-fit: cover;
         }
         @media screen and (max-width:900px) {

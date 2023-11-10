@@ -26,24 +26,7 @@
         <a href=""><img src="../Picture/Icon/Icon_Instaram.png" alt=""></a>
     </div>
     <div class="cart_static">
-    <p><?php 
-            $query = "SELECT quantity FROM cart WHERE user_id = ?";
-            $stmt = $connect->prepare($query);
-            $stmt->bind_param("i", $user_id);
-            
-            if ($stmt->execute()) {
-                $result = $stmt->get_result();
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    $quantity = $row["quantity"];
-                    echo "$quantity";
-                } else {
-                    echo "0";
-                }
-            } else {
-                echo "Lỗi khi truy vấn dữ liệu giỏ hàng: " . $stmt->error;
-            }
-            ?></p>
+        <p id="cart-item"></p>
         <a href="../PHP/cart.php">
             <img src="../Picture/Icon/Icon_cart_static.png">
         </a>
@@ -54,14 +37,14 @@
                 <li><a href=""><img src="../Picture/Icon/Icon_Box.png" alt="">Tra cứu đơn hàng </a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_Location.png" alt="">Tìm cửa hàng</a></li>
                 <li><a href=""><img src="../Picture/Icon/Icon_heart.png" alt="">Yêu thích</a></li>
-                <li class="dropdown">
+                <li>
                     <?php
                     if (isset($_SESSION["emailLogin"])) {
                         // Nếu người dùng đã đăng nhập, hiển thị tên của họ
                         echo '<a href="inf_user.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
                     } else {
                         // Nếu người dùng chưa đăng nhập, hiển thị "Đăng nhập"
-                        echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
+                        echo '<a href="login_V2.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
                     }
                     ?>
                 </li>
@@ -181,8 +164,19 @@
                 </div>
             </div>
         </div>
-        <div class="header_3">
-            <p>Khám phá phong cách nằm sâu trong bạn</p>
+        <div class="slideshow-container">
+            <div class="slide">
+              <p>Free SHIPPING với hóa đơn từ 900.000</p>
+            </div>
+            <div class="slide">
+              <p>Buy More pay less - Áp dụng khi mua phụ kiện</p>
+            </div>
+            <div class="slide">
+              <p>hàng 2 tuần nhận đổi - Giày bảo hành nửa năm</p>
+            </div>
+            <div class="slide">
+              <p>Buy 2 get 10 % off - Áp dụng với tất cả basis tee</p>
+            </div>
         </div>
     </header>
     <main>
@@ -424,5 +418,8 @@
         </div>
     </footer>
     <?php $connect->close();?>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+    <script src="../JavaScript/index.js"></script>
 </body>
 </html>

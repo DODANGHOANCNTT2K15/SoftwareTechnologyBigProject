@@ -1,7 +1,15 @@
-.color button{
-    width: 90%;
-    height: 90%;
+#btn_color_1 {
+    background-color: #889BAE;
 }
-    .color_1 button{
-        background-color: #c4d815;
-    }
+#btn_color_2 {
+    background-color: #EDC373;
+}
+#btn_color_3 {
+    background-color: #C1ACC5;
+}
+#btn_color_4 {
+    background-color: #75A14F;
+}
+#btn_color_5 {
+    background-color: #D0D3B4;
+}

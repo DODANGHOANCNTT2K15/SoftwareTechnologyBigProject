@@ -79,30 +79,40 @@
 
 	// Checkout and save customer info in the orders table
 	if (isset($_POST['action']) && isset($_POST['action']) == 'order') {
-	  $name = $_POST['name'];
+	  $fullName = $_POST['fullName'];
 	  $email = $_POST['email'];
-	  $phone = $_POST['phone'];
+	  $phoneNumber = $_POST['phoneNumber'];
 	  $products = $_POST['products'];
 	  $grand_total = $_POST['grand_total'];
 	  $address = $_POST['address'];
 	  $pmode = $_POST['pmode'];
+	  $user_id = $_POST['user_id'];
 
 	  $data = '';
 
-	  $stmt = $connect->prepare('INSERT INTO orders (name,email,phone,address,pmode,products,amount_paid)VALUES(?,?,?,?,?,?,?)');
-	  $stmt->bind_param('sssssss',$name,$email,$phone,$address,$pmode,$products,$grand_total);
+	  $stmt = $connect->prepare('INSERT INTO orders (user_id, fullName,email,phoneNumber,address,pmode,products,amount_paid)VALUES(?,?,?,?,?,?,?,?)');
+	  $stmt->bind_param('sssssssi',$user_id,$name,$email,$phone,$address,$pmode,$products,$grand_total);
 	  $stmt->execute();
 	  $stmt2 = $connect->prepare('DELETE FROM cart');
 	  $stmt2->execute();
 	  $data .= '<div class="text-center">
-								<h1 class="display-4 mt-2 text-danger">Thank You!</h1>
-								<h2 class="text-success">Your Order Placed Successfully!</h2>
-								<h4 class="bg-danger text-light rounded p-2">Items Purchased : ' . $products . '</h4>
-								<h4>Your Name : ' . $name . '</h4>
-								<h4>Your E-mail : ' . $email . '</h4>
-								<h4>Your Phone : ' . $phone . '</h4>
-								<h4>Total Amount Paid : ' . number_format($grand_total,2) . '</h4>
-								<h4>Payment Mode : ' . $pmode . '</h4>
+								<h2>Đặt hàng thành công!</h2>
+								<h4>Sản phẩm : ' . $products . '</h4>
+								<h4>Khách hàng : ' . $fullName . '</h4>
+								<h4>Địa chỉ email : ' . $email . '</h4>
+								<h4>Số điện thoại : ' . $phoneNumber . '</h4>
+								<h4>Tổng hóa đơn : ' . number_format($grand_total,2) . '</h4>
+								<h4>Phương thức thanh toán : ';
+								if ($pmode === "cod") {
+									$data .= "Thanh toán tiền mặt khi nhận hàng";
+								} elseif ($pmode === "netbanking") {
+									$data .= "Chuyển khoản";
+								} else {
+									$data .= "Thẻ tín dụng";
+								}
+								$data .='</h4>
+								<h3>Cảm ơn bạn đã chọn FOOTSTEP IN FASHION giữa nhiều nhãn hàng khác.</h3>
+								<h4>Nếu gặp vấn đề trong lúc giao, nhận hàng hãy liên hệ theo số điện thoại: 0961516674 để được hỗ trợ.</h4>
 						  </div>';
 	  echo $data;
 	}

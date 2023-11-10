@@ -90,3 +90,6 @@ video{
                 font-weight: bold;
                 transition: 1s;
             }
+.error {
+    color: red;
+}

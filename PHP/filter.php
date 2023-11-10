@@ -127,25 +127,23 @@ if (isset($_POST['action'])) {
     //output variable contains filtered broduct content 
     $output = "";
     if ($rows > 0) {
-        while ($data = $result->fetch_assoc()) {
-            $formattedPrice = formatPrice($data['product_price']);
-            $output .= "<div class='product_content_item'>
-                            <div class='product_content_item_img'>
-                                <a href='../PHP/".htmlspecialchars($data['product_link'])."'><img src='../Picture/Product/".htmlspecialchars($data['product_image'])."'></a>
-                            </div>
-                            <div class='product_content_item_inf'>
-                                <p>".htmlspecialchars($data['product_state'])."</p>
-                                <h2><a href='../PHP/".htmlspecialchars($data['product_link'])."'>Pattas Tomo - Low Top</a></h2>
-                                <p>".htmlspecialchars($data['product_color'])."</p>
-                                <p>".htmlspecialchars($formattedPrice)." VND</p>
-                            </div>
-                        </div>";
-        }
+    while ($data = $result->fetch_assoc()) {
+        $formattedPrice = formatPrice($data['product_price']);
+        $output .= "<div class='product_content_item'>
+                        <div class='product_content_item_img'>
+                            <a href='../PHP/" . htmlspecialchars($data['product_link']) . "'><img src='../Picture/Product/" . htmlspecialchars($data['product_image']) . "'></a>
+                        </div>
+                        <div class='product_content_item_inf'>
+                            <p>" . htmlspecialchars($data['product_state']) . "</p>
+                            <h2><a href='../PHP/" . htmlspecialchars($data['product_link']) . "'>" . htmlspecialchars($data['product_description']) . "</a></h2>
+                            <p>" . htmlspecialchars($data['product_color']) . "</p>
+                            <p>" . htmlspecialchars($formattedPrice) . " VND</p>
+                        </div>
+                    </div>";
+    }
     } else {
         $output = '<div style="color:red;font-size:17px;">No results found</div>';
     }
-    
-    
     //echo back filterd product to page
     echo $output;
 }

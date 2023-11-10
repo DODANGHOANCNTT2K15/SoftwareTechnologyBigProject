@@ -88,7 +88,24 @@
                             } else {
                                 echo "Cập nhật thông tin thất bại: " . $update_stmt->error;
                             }
-                        }                        
+                        } 
+                        
+                        if (isset($_POST['update_address'])) {
+                            $new_firstName = $_POST["firstName"];
+                            $new_lastName = $_POST["lastName"];
+                            $new_phoneNumber = $_POST["phoneNumber"];
+                            $new_address = $_POST["address"];
+                            $update_query = "UPDATE user SET firstName = ?, lastName = ?, phoneNumber = ?, address = ? WHERE user_id = ?";
+                            $update_stmt = $connect->prepare($update_query);
+                            $update_stmt->bind_param("ssssi", $new_firstName, $new_lastName, $new_phoneNumber, $new_address, $user_id);
+            
+                            if ($update_stmt->execute()) {
+                                header("Location: {$_SERVER['REQUEST_URI']}");
+                                exit();
+                            } else {
+                                echo "Cập nhật địa chỉ thất bại " . $update_stmt->error;
+                            }
+                        }
                     }
                 } else {
                     echo "Không tìm thấy người dùng với user_id: " . $user_id;
@@ -176,31 +193,31 @@
             <button type="submit" name="update_detail">CẬP NHẬT THÔNG TIN</button>
         </div>
     </form>
-    <div class="add_address_user">
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="add_address_user">
         <div class="exit_change_imf">
             X
         </div>
         <div class="add_address_user_cover">
-            <h1>THÊM ĐỊA CHỈ MỚI</h1>
+            <h1>Thay đổi địa chỉ</h1>
             <div class="input_userName">
                 <p>Tên <span>*</span></p>
-                <input type="text" placeholder="Hoàn">
+                <input type="text" name="lastName" value="<?php echo $data['lastName'];?>">
             </div>
             <div class="input_userName">
                 <p>Họ <span>*</span></p>
-                <input type="text" placeholder="Đỗ Đăng">
+                <input type="text" name="firstName" value="<?php echo $data['firstName'];?>">
             </div>
             <div class="input_userName">
                 <p>Địa chỉ <span>*</span></p>
-                <input type="text" placeholder="Sô nhà trên mây, Ngõ tào lao, Phố đèn đỏ, Tầng 18, Địa Ngục">
+                <input type="text" name="address" value="<?php echo $data['address'];?>">
             </div>
             <div class="input_userName">
                 <p>Số điện thoại <span>*</span></p>
-                <input type="text" placeholder="0987246112">
+                <input type="text" name="phoneNumber" value="<?php echo $data['phoneNumber'];?>">
             </div>
-            <button>LƯU</button>
+            <button type="submit" name="update_address">LƯU</button>
         </div>
-    </div>
+    </form>
     <header>
         <div class="header_1">
             <ul>
@@ -334,8 +351,19 @@
                 </div>
             </div>
         </div>
-        <div class="header_3">
-            <p>Khám phá phong cách nằm sâu trong bạn</p>
+        <div class="slideshow-container">
+            <div class="slide">
+              <p>Free SHIPPING với hóa đơn từ 900.000</p>
+            </div>
+            <div class="slide">
+              <p>Buy More pay less - Áp dụng khi mua phụ kiện</p>
+            </div>
+            <div class="slide">
+              <p>hàng 2 tuần nhận đổi - Giày bảo hành nửa năm</p>
+            </div>
+            <div class="slide">
+              <p>Buy 2 get 10 % off - Áp dụng với tất cả basis tee</p>
+            </div>
         </div>
     </header>
     <main>
@@ -390,7 +418,7 @@
                         <h1><?php echo $data['fullName']?></h1>
                             <p><?php echo $data['address']?></p>
                             <p><?php echo $data['phoneNumber']?></p>
-                            <p class="edit_address_button">CHỈNH SỬA</p>
+                            <p class="edit_address_button address_add" style="font-size: 20px;">CHỈNH SỬA</p>
                             <p class="edit_address_button" style="visibility:hidden">XÓA</p>
                         </form>
                         <div class="address address_add" style="visibility:hidden">
@@ -470,5 +498,8 @@
     </footer>
     <script src="../JavaScript/FindShop.js"></script>
     <script src="../JavaScript/imf_user.js" type="text/javascript"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+    <script src="../JavaScript/index.js"></script>
 </body>
 </html>
