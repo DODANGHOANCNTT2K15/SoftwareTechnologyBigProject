@@ -13,7 +13,9 @@
 <?php
     // Yêu cầu kết nối với database
     require_once 'ConnectData.php';
+    session_start();
     $email = $phoneNumber = $passWord = $fullName = "";
+    $phoneNumberErr = $emailErr = $passWordErr = $fullNameErr = "";
 
     // Kiểm tra các trường dữ liệu
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,7 +27,7 @@
 
         // Kiểm tra email đăng ký đã tồn tại chưa
         $checkEmailQuery = "SELECT * FROM user WHERE email = ?";
-        $checkEmailStmt = $conn->prepare($checkEmailQuery);
+        $checkEmailStmt = $connect->prepare($checkEmailQuery);
         $checkEmailStmt->bind_param("s", $email);
         $checkEmailStmt->execute();
         $result = $checkEmailStmt->get_result();
@@ -54,38 +56,34 @@
         } else {
             // Email không tồn tại trong cơ sở dữ liệu, tiếp tục chèn dữ liệu
             if (empty($emailErr) && empty($phoneNumberErr) && empty($passWordErr) && empty($fullNameErr)) {
-                if ($conn->connect_error) {
-                    die('Kết nối không thành công : ' . $conn->connect_error);
+                if ($connect->connect_error) {
+                    die('Kết nối không thành công : ' . $connect->connect_error);
                 } else {
                     // Chèn dữ liệu người dùng mới vào bảng 'user'
-                    $stmt = $conn->prepare("INSERT INTO user (email, phoneNumber, passWord, fullName) VALUES (?, ?, ?, ?)");
-                    $stmt->bind_param("ssss", $email, $phoneNumber, $passWord, $fullName);
-
+                    $dateOfBirth = '1/1/2023';
+                    $sex = 'chưa có';
+                    $address = 'chưa có';
+            
+                    $stmt = $connect->prepare("INSERT INTO user (email, phoneNumber, passWord, fullName, dateOfBirth, sex, address) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                    $stmt->bind_param("sssssss", $email, $phoneNumber, $passWord, $fullName, $dateOfBirth, $sex, $address);
+            
                     if ($stmt->execute()) {
                         // Sau khi chèn thành công, tiếp tục truy vấn user_id của người dùng
                         $user_id = $stmt->insert_id;
-
-                        // Mã SQL để chèn một giỏ hàng mới cho người dùng
-                        $insertCartQuery = "INSERT INTO Cart (user_id, product_id, quantity ) VALUES (?, Null, ?)";
-                        $initialQuantity = 0; // Số lượng ban đầu của giỏ hàng (có thể là 0)
-                        $stmt = $conn->prepare($insertCartQuery);
-                        $stmt->bind_param("ii", $user_id, $initialQuantity);
-
-                        if ($stmt->execute()) {
-                            // Giỏ hàng đã được tạo cho người dùng mới đăng ký
-                            header("Location: register_success.php");
+                            $_SESSION["user_id"] = $user_id;
+                            $_SESSION["emailLogin"] = $email;
+                            header("Location: index.php");
                             exit;
-                        } else {
-                            echo "Lỗi khi thêm giỏ hàng: " . $stmt->error;
-                        }
                     } else {
                         echo "Lỗi khi thêm dữ liệu: " . $stmt->error;
                     }
-
+            
                     $stmt->close();
-                    $conn->close();
+                    $connect->close();
                 }
             }
+            
+            
         }
     }
 

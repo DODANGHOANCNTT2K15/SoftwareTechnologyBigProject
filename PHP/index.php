@@ -44,7 +44,7 @@
                         echo '<a href="inf_user.php"><img src="../Picture/Icon/Icon_Person.png" alt="">' . $_SESSION["emailLogin"] . '</a>';
                     } else {
                         // Nếu người dùng chưa đăng nhập, hiển thị "Đăng nhập"
-                        echo '<a href="login_V2.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
+                        echo '<a href="login.php"><img src="../Picture/Icon/Icon_Person.png" alt="">Đăng nhập</a>';
                     }
                     ?>
                 </li>

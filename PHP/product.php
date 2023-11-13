@@ -234,7 +234,7 @@
                         <li><input type="checkbox" class="form-check-input product-check" value="> 500" id="product_price">> 500</li>
                     </ul>
                 </div>
-                <div class="main_category_6 main_category_ main_category_text_title">
+                <!-- <div class="main_category_6 main_category_ main_category_text_title">
                     <h1>CHẤT LIỆU</h1>
                     <ul>
                         <li><input type="checkbox" class="form-check-input product-check" value="CV" id="product_material">Canvas</li>
@@ -243,7 +243,7 @@
                         <li><input type="checkbox" class="form-check-input product-check" value="Da" id="product_material">Da</li>
                         <li><input type="checkbox" class="form-check-input product-check" value="AL" id="product_material">Acrylic</li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="main_category_7 main_category_ main_category_text_title">
                     <h1>MÀU SẮC</h1>
                     <ul>

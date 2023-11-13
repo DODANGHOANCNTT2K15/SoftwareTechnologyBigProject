@@ -107,7 +107,7 @@
             <a href="#"><img src="../Picture/Icon/logo-google.png" alt="">Google</a>
           </div>
           <div class="sign-up">
-            Bạn mới biết Ananas ?<a href="">  Đăng ký</a>
+            Bạn mới biết Ananas ?<a href="register.php">  Đăng ký</a>
           </div>
         </form>
     </div>
